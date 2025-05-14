@@ -29,8 +29,15 @@
                 <li class="nav-link-item dropdown-menu-branch">
                     <a href="#" data-toggle="dropdown-menu">Products <i class="bi bi-chevron-down"></i></a>
                     <ul class="dropdown-main-menu">
+                        @php
+                            use App\Models\ProductCategory;
+                            $productCat = ProductCategory::all();
+                        @endphp
                         <li class="dropdown-menu-item">
-                            <a href="{{route('productDetails')}}">Option 1</a>
+                            @foreach ($productCat as $productCats)
+                                
+                            <a href="{{url('products/'.$productCats->slug)}}">{{$productCats->name}}</a>
+                            @endforeach
                         </li>
                       
                         <li class="dropdown-menu-item">
