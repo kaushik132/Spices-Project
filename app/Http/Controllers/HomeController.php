@@ -10,7 +10,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+
+        $productCat = Product::all();
+        return view('home',compact('productCat'));
     }
   
     public function contactUs()
@@ -42,7 +44,7 @@ class HomeController extends Controller
 
     public function productDetails($slug = null) 
     {
-        $product = Product::latest()->limit(3)->get();
+        $product = Product::latest()->limit(10)->get();
         $productData = Product::with('productCategory')->where('slug',$slug)->first();
         return view('product_details',compact('productData','product'));
     }

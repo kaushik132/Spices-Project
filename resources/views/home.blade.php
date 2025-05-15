@@ -143,89 +143,30 @@
                 <div class="swiper-wrapper">
                     <!-- 6 Example Slides -->
 
-                    <div class="swiper-slide">
-                       <a href="product-details.html" class="text-decoration-none">
-                        <div class="main-prodcut-show-view">
-                            <div><img
-                                    src="https://lh4.googleusercontent.com/proxy/Qpwzw8qMGOEWubAODcRuMShSUUCWjy5gLwukFscE7SCuWsXQusBAXGmm8jWGMXOjFix8DyTC76m3mutWjb8"
-                                    alt="product-image" class="img-fluid"></div>
-                            <h6>Lorem ipsum dolor sit amet.</h6>
-                            <p><span>&#8377;68.00</span> &#8377;57.00</p>
-                        </div>
-                    </a> 
-                    </div>
+               
+@foreach ($productCat as $productCats)
+    
+<div class="swiper-slide">
+    <a href="{{url('product-details/'$productCats->slug)}}" class="text-decoration-none">
+    <div class="main-prodcut-show-view">
+        <div><img
+                src="{{ url('uploads/' . $productCats->image) }}"
+                alt="product-image" class="img-fluid"></div>
+        <h6>{{$productCats->product_name}}</h6>
+        <p><span>&#8377;{{ $productCats->descount_price }}</span> &#8377;{{ $productCats->price }}</p>
+    </div>
+    </a>
+</div>
+@endforeach
+            
 
-                    <div class="swiper-slide">
-                        <a href="product-details.html" class="text-decoration-none">
-                        <div class="main-prodcut-show-view">
-                            <div><img
-                                    src="https://lh4.googleusercontent.com/proxy/Qpwzw8qMGOEWubAODcRuMShSUUCWjy5gLwukFscE7SCuWsXQusBAXGmm8jWGMXOjFix8DyTC76m3mutWjb8"
-                                    alt="product-image" class="img-fluid"></div>
-                            <h6>Lorem ipsum dolor sit amet.</h6>
-                            <p><span>&#8377;68.00</span> &#8377;57.00</p>
-                        </div>
-                        </a>
-                    </div>
+                 
 
-                    <div class="swiper-slide">
-                        <a href="product-details.html" class="text-decoration-none">
-                        <div class="main-prodcut-show-view">
-                            <div><img
-                                    src="https://lh4.googleusercontent.com/proxy/Qpwzw8qMGOEWubAODcRuMShSUUCWjy5gLwukFscE7SCuWsXQusBAXGmm8jWGMXOjFix8DyTC76m3mutWjb8"
-                                    alt="product-image" class="img-fluid"></div>
-                            <h6>Lorem ipsum dolor sit amet.</h6>
-                            <p><span>&#8377;68.00</span> &#8377;57.00</p>
-                        </div>
-                        </a>
-                    </div>
+                
 
-                    <div class="swiper-slide">
-                        <a href="product-details.html" class="text-decoration-none">
-                        <div class="main-prodcut-show-view">
-                            <div><img
-                                    src="https://lh4.googleusercontent.com/proxy/Qpwzw8qMGOEWubAODcRuMShSUUCWjy5gLwukFscE7SCuWsXQusBAXGmm8jWGMXOjFix8DyTC76m3mutWjb8"
-                                    alt="product-image" class="img-fluid"></div>
-                            <h6>Lorem ipsum dolor sit amet.</h6>
-                            <p><span>&#8377;68.00</span> &#8377;57.00</p>
-                        </div>
-                        </a>
-                    </div>
+             
 
-                    <div class="swiper-slide">
-                        <a href="product-details.html" class="text-decoration-none">
-                        <div class="main-prodcut-show-view">
-                            <div><img
-                                    src="https://lh4.googleusercontent.com/proxy/Qpwzw8qMGOEWubAODcRuMShSUUCWjy5gLwukFscE7SCuWsXQusBAXGmm8jWGMXOjFix8DyTC76m3mutWjb8"
-                                    alt="product-image" class="img-fluid"></div>
-                            <h6>Lorem ipsum dolor sit amet.</h6>
-                            <p><span>&#8377;68.00</span> &#8377;57.00</p>
-                        </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <a href="product-details.html" class="text-decoration-none">
-                        <div class="main-prodcut-show-view">
-                            <div><img
-                                    src="https://lh4.googleusercontent.com/proxy/Qpwzw8qMGOEWubAODcRuMShSUUCWjy5gLwukFscE7SCuWsXQusBAXGmm8jWGMXOjFix8DyTC76m3mutWjb8"
-                                    alt="product-image" class="img-fluid"></div>
-                            <h6>Lorem ipsum dolor sit amet.</h6>
-                            <p><span>&#8377;68.00</span> &#8377;57.00</p>
-                        </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <a href="product-details.html" class="text-decoration-none">
-                        <div class="main-prodcut-show-view">
-                            <div><img
-                                    src="https://lh4.googleusercontent.com/proxy/Qpwzw8qMGOEWubAODcRuMShSUUCWjy5gLwukFscE7SCuWsXQusBAXGmm8jWGMXOjFix8DyTC76m3mutWjb8"
-                                    alt="product-image" class="img-fluid"></div>
-                            <h6>Lorem ipsum dolor sit amet.</h6>
-                            <p><span>&#8377;68.00</span> &#8377;57.00</p>
-                        </div>
-                        </a>
-                    </div>
+                  
                 </div>
                 <!-- Navigation buttons -->
 
