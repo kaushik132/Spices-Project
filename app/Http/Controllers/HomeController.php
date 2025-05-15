@@ -14,6 +14,7 @@ class HomeController extends Controller
         $productCat = Product::all();
         return view('home',compact('productCat'));
     }
+   
   
     public function contactUs()
     {

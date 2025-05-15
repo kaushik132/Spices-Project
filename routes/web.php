@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 route::get('/', [HomeController::class, 'index'])->name('home');
+
 route::get('contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
 route::get('products/{slug?}', [HomeController::class, 'products'])->name('products');
 route::get('product-details/{slug?}', [HomeController::class, 'productDetails'])->name('productDetails');

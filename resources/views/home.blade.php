@@ -147,7 +147,7 @@
 @foreach ($productCat as $productCats)
     
 <div class="swiper-slide">
-    <a href="{{url('product-details/'$productCats->slug)}}" class="text-decoration-none">
+    <a href="{{url('product-details/'.$productCats->slug)}}" class="text-decoration-none">
     <div class="main-prodcut-show-view">
         <div><img
                 src="{{ url('uploads/' . $productCats->image) }}"
