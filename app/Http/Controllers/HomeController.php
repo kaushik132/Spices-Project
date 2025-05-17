@@ -7,6 +7,7 @@ use App\Models\Title;
 use App\Models\Contact;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,8 @@ class HomeController extends Controller
         $seo_data['keywords'] = $homepage->seo_key_home;
         $canocial ='https://shyamafoods.com/';
         $productCat = Product::all();
-        return view('home',compact('productCat','seo_data','canocial'));
+        $testimonal = Testimonial::all();
+        return view('home',compact('productCat','seo_data','canocial','testimonal'));
     }
    
   

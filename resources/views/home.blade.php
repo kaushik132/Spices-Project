@@ -251,222 +251,65 @@
                 <div class="swiper-wrapper">
                     <!-- 6 Example Slides -->
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-slider-box">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-                                        alt="user" class="user-image" />
-                                </div>
-
-                                <div class="testimonial-user-details">
-                                    <div class="name">Anil Sharma</div>
-
-                                    <div class="date">Lorem, ipsum.</div>
-
-                                    <div class="icon">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Magnam sapiente nobis modi sint eius dolorum quibusdam
-                                doloremque aperiam accusamus laboriosam.
-                            </p>
-                        </div>
-                    </div>
+                    
+@foreach ($testimonal as $testimonals)
+    
 
                     <div class="swiper-slide">
                         <div class="testimonial-slider-box">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                    <img src="{{ url('uploads/' . $testimonals->image) }}"
                                         alt="user" class="user-image" />
                                 </div>
 
                                 <div class="testimonial-user-details">
-                                    <div class="name">Meena Kapoor</div>
+                                    <div class="name">{{$testimonals->name}}</div>
 
-                                    <div class="date">Lorem, ipsum.</div>
+                                    <div class="date">{{$testimonals->role}}</div>
 
-                                    <div class="icon">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
+                                 @php
+    $rating = $testimonals->star;
+    $fullStars = floor($rating);
+    $halfStar = ($rating - $fullStars) >= 0.5 ? true : false;
+    $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+@endphp
+
+<div class="icon">
+    {{-- Full stars --}}
+    @for ($i = 0; $i < $fullStars; $i++)
+        <i class="bi bi-star-fill"></i>
+    @endfor
+
+    {{-- Half star --}}
+    @if ($halfStar)
+        <i class="bi bi-star-half"></i>
+    @endif
+
+    {{-- Empty stars --}}
+    @for ($i = 0; $i < $emptyStars; $i++)
+        <i class="bi bi-star"></i>
+    @endfor
+</div>
+
                                 </div>
                             </div>
 
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-                                magnam eaque! Omnis perferendis itaque temporibus qui debitis
-                                nihil dolor fuga!
+                            
+                                {{$testimonals->description}}
                             </p>
                         </div>
                     </div>
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-slider-box">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-                                        alt="user" class="user-image" />
-                                </div>
+             @endforeach
 
-                                <div class="testimonial-user-details">
-                                    <div class="name">Rajiv Joshi</div>
+                  
 
-                                    <div class="date">Lorem, ipsum.</div>
+                  
+                    
 
-                                    <div class="icon">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Voluptates aliquam assumenda laboriosam ex nisi nesciunt
-                                similique odit provident, maiores illum.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-slider-box">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-                                        alt="user" class="user-image" />
-                                </div>
-
-                                <div class="testimonial-user-details">
-                                    <div class="name">Rajeev Sharma</div>
-
-                                    <div class="date">Lorem, ipsum.</div>
-
-                                    <div class="icon">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Mollitia, facere. Ad accusamus eum provident quis facilis
-                                ducimus aspernatur alias voluptate?
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-slider-box">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-                                        alt="user" class="user-image" />
-                                </div>
-
-                                <div class="testimonial-user-details">
-                                    <div class="name">Priya Soni</div>
-
-                                    <div class="date">Lorem, ipsum.</div>
-
-                                    <div class="icon">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Maxime praesentium eum amet quis dolore nihil nam libero
-                                dolorum voluptas provident!
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-slider-box">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-                                        alt="user" class="user-image" />
-                                </div>
-
-                                <div class="testimonial-user-details">
-                                    <div class="name">Vijay Parmar</div>
-
-                                    <div class="date">Lorem, ipsum.</div>
-
-                                    <div class="icon">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Laudantium veritatis modi itaque voluptatem delectus ea
-                                cupiditate velit ipsum distinctio illo?
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-slider-box">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-                                        alt="user" class="user-image" />
-                                </div>
-
-                                <div class="testimonial-user-details">
-                                    <div class="name">Aditi Khanna</div>
-
-                                    <div class="date">Lorem, ipsum.</div>
-
-                                    <div class="icon">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Corrupti quisquam quas maiores ea neque aliquid, quos ipsa
-                                ipsam enim qui.
-                            </p>
-                        </div>
-                    </div>
+                  
                 </div>
                 <!-- Navigation buttons -->
 

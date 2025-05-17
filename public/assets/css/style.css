@@ -740,10 +740,7 @@ h1, h2, h3, h4, h5, h6{
   color:var(--first-color);
   margin-top: 15px;
 }
-.product-main-details-box h2 span{
-  text-decoration: line-through;
-  color:#3f3f3f;
-}
+
 .product-main-details-box h2 small{
   font-size: 13px;
   font-weight: 400;

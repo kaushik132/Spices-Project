@@ -77,7 +77,7 @@
                     <a href="{{route('contactUs')}}">Contact us</a>
                 </li>
                 <li class="nav-link-item">
-                    <a href="#"><span class="nav-apply-btn">WhatsApp <i class="bi bi-whatsapp"></i></span></a>
+                    <a href="https://api.whatsapp.com/send?phone=1234567890" target="_blanck"><span class="nav-apply-btn">WhatsApp <i class="bi bi-whatsapp"></i></span></a>
                 </li>
             </ul>
         </div>

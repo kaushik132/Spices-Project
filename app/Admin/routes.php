@@ -16,5 +16,6 @@ Route::group([
     $router->resource('products', ProductController::class);
     $router->resource('titles', TitleController::class);
     $router->resource('contacts', ContactController::class);
+    $router->resource('testimonials', TestimonialController::class);
 
 });

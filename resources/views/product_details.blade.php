@@ -61,9 +61,8 @@
                         {{-- <small>SKU: TP 100g 3(GS)</small> --}}
                        <!-- Product Price -->
 <h2 id="product-price">
-    <span>&#8377;<span id="discount-price">{{ $productData->descount_price }}</span>
-    </span>
-    &#8377;<span id="original-price">{{ $productData->price }}</span>
+<span id="discount-price" style="  text-decoration: line-through;
+  color:#3f3f3f;">&#8377;{{ $productData->descount_price }}</span> <span id="original-price">&#8377;{{ $productData->price }}</span>
 </h2>
                         <small>(Inclusive of all taxes)</small>
                         <p>{!! $productData->contant !!}</p>
@@ -71,10 +70,10 @@
                         <div>Size:</div>
               <!-- Quantity Selector -->
 <select name="quantity" id="quantity-selector" class="contact-input-box w-50">
-    <option value="1">100g (pack of 3)</option>
-    <option value="1.2">200g (pack of 2)</option> <!-- +20% -->
-    <option value="1.5">500g</option>             <!-- +50% -->
-    <option value="2">1Kg</option>                <!-- +100% -->
+    <option value="1">100g</option>
+    <option value="2">200g</option> <!-- 2x -->
+    <option value="5">500g</option>             <!-- 5x -->
+    <option value="10">1Kg</option>             <!-- 10x -->
 </select>
 
 <!-- Description Table (Base: 100g) -->
@@ -84,14 +83,12 @@
 </div>
 
 <script>
-    // Base prices from server (set once)
     const baseDiscountPrice = parseFloat({{ $productData->descount_price }});
     const baseOriginalPrice = parseFloat({{ $productData->price }});
 
     document.getElementById('quantity-selector').addEventListener('change', function () {
         const multiplier = parseFloat(this.value);
 
-        // Update Prices
         const discountPriceElem = document.getElementById('discount-price');
         const originalPriceElem = document.getElementById('original-price');
 
