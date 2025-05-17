@@ -106,7 +106,7 @@ class ProductController extends AdminController
 
         $form->tab('Social Media', function (Form $form) {
             $form->url('facebook', __('Facebook'))->rules('nullable|url');
-            $form->url('twitter', __('Twitter'))->rules('nullable|url');
+            $form->url('whatsapp', __('Whatsapp'))->rules('nullable|url');
             $form->url('instagram', __('Instagram'))->rules('nullable|url');
             $form->url('linkedin', __('LinkedIn'))->rules('nullable|url');
         });

@@ -64,16 +64,55 @@
                         <p>{!! $productData->contant !!}</p>
 
                         <div>Size:</div>
-                        <select name="" id="" class="contact-input-box w-50">
-                            <option value="">100g(pack of 3)</option>
-                            <option value="">200g(pack of 2)</option>
-                            <option value="">500g</option>
-                            <option value="">1Kg</option>
-                        </select>
-                        <div class="mt-3">Description:</div>
-                        <p>
-                            {!! $productData->description !!}
-                        </p>
+              <!-- Quantity Selector -->
+<select name="quantity" id="quantity-selector" class="contact-input-box w-50">
+    <option value="1">100g (pack of 3)</option>
+    <option value="1.2">200g (pack of 2)</option> <!-- +20% -->
+    <option value="1.5">500g</option>             <!-- +50% -->
+    <option value="2">1Kg</option>                <!-- +100% -->
+</select>
+
+<!-- Description Table (Base: 100g) -->
+<div class="mt-3">Description:</div>
+<div id="product-description">
+    {!! $productData->description !!}
+</div>
+
+<script>
+    document.getElementById('quantity-selector').addEventListener('change', function () {
+        const multiplier = parseFloat(this.value);
+        const descriptionDiv = document.getElementById('product-description');
+
+        // Clone original HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = `{!! addslashes($productData->description) !!}`; // Safe encoding
+
+        // Loop through all table data cells
+        const rows = tempDiv.querySelectorAll('tr');
+        rows.forEach(row => {
+            const th = row.querySelector('th')?.textContent.toLowerCase();
+            const td = row.querySelector('td');
+
+            if (!td) return;
+
+            const originalValue = td.textContent.trim();
+
+            // Check if it's a measurable value
+            const match = originalValue.match(/([\d\.]+)\s*([a-zA-Z]+)/);
+            if (match) {
+                let value = parseFloat(match[1]);
+                let unit = match[2];
+
+                // Increase value
+                const newValue = (value * multiplier).toFixed(2);
+                td.textContent = newValue + unit;
+            }
+        });
+
+        // Replace HTML
+        descriptionDiv.innerHTML = tempDiv.innerHTML;
+    });
+</script>
 
                         <div class="d-flex align-items-center mt-4">
                             <div>Share :</div>
@@ -83,9 +122,9 @@
                                 </a>
                             @endif
 
-                            @if ($productData->twitter != null)
-                                <a href="{{ $productData->twitter }}" target="_blank">
-                                    <div class="social-icons"><i class="fa-brands fa-twitter"></i></div>
+                            @if ($productData->whatsapp != null)
+                                <a href="{{ $productData->whatsapp }}" target="_blank">
+                                    <div class="social-icons"><i class="fa-brands fa-whatsapp"></i></div>
                                 </a>
                             @endif
 

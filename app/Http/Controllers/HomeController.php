@@ -43,10 +43,15 @@ class HomeController extends Controller
         return view('product',compact('productList','productCat'));
     }
 
-    public function productDetails($slug = null) 
-    {
-        $product = Product::latest()->limit(10)->get();
-        $productData = Product::with('productCategory')->where('slug',$slug)->first();
-        return view('product_details',compact('productData','product'));
-    }
+ public function productDetails($slug = null) 
+{
+    $product = Product::latest()->limit(10)->get();
+    $productData = Product::with('productCategory')->where('slug', $slug)->first();
+
+    // Get quantity-wise descriptions (assume stored as JSON in DB)
+    $productDescriptions = json_decode($productData->descriptions_by_quantity ?? '{}', true);
+
+    return view('product_details', compact('productData', 'product', 'productDescriptions'));
+}
+
 }
