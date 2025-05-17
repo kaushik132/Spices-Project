@@ -110,6 +110,12 @@ class ProductController extends AdminController
             $form->url('instagram', __('Instagram'))->rules('nullable|url');
             $form->url('linkedin', __('LinkedIn'))->rules('nullable|url');
         });
+        $form->tab('Seo Section ', function (Form $form) {
+            $form->text('seo_title', __('Seo Title'));
+            $form->textarea('seo_des', __('Seo Description'));
+            $form->textarea('seo_key', __('Seo Keywords'));
+           
+        });
 
         return $form;
     }

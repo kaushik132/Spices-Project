@@ -33,34 +33,87 @@
                 </div>
                 <div class="col-md-4 mt-4">
                     <h5 class="cont-title-show">Get in touch with us</h5>
-                    <form action="">
-                        <input type="text" class="contact-input-box" placeholder="Full Name">
-                        <input type="text" class="contact-input-box" placeholder="Company Name (Optional)">
-                        <input type="text" class="contact-input-box" placeholder="Street Address">
+                    @if (session()->has('message'))
+      <div class="alert alert-success">
+
+         
+         {{session()->get('message')}}
+      </div>
+          
+      @endif
+                    <form action="{{route('contactUsPost')}}" method="POST" class="contact-form-show">
+                        @csrf
+                        <input type="text" name="name"  oninput="this.value = this.value.replace(/[^A-Za-z+.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="contact-input-box" placeholder="Full Name">
+                         <span class="text-danger">
+                     @error('name')
+                        {{$message}}
+                     @enderror
+                   </span>
+                        <input type="text" name="company" class="contact-input-box" placeholder="Company Name (Optional)">
+                         <span class="text-danger">
+                     @error('company')
+                        {{$message}}
+                     @enderror
+                   </span>
+                        <input type="text" name="address" class="contact-input-box" placeholder="Street Address">
+  <span class="text-danger">
+                     @error('address')
+                        {{$message}}
+                     @enderror
+                   </span>
+
+
+
+
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" class="contact-input-box" placeholder="Postal Address">
+                                <input type="text" name="postal_address" class="contact-input-box" placeholder="Postal Address">
+                                  <span class="text-danger">
+                     @error('postal_address')
+                        {{$message}}
+                     @enderror
+                   </span>
                             </div>
                             <div class="col-md-6">
-                                <select name="" id="" class="contact-input-box">
-                                    <option value="">City</option>
-                                    <option value="">Jaipur</option>
+                                <select name="city" id="" class="contact-input-box">
+                                    <option value="City">City</option>
+                                    <option value="Jaipur">Jaipur</option>
                                 </select>
                             </div>
                             <div class="col-md-12">
-                                <select name="" id="" class="contact-input-box">
-                                    <option value="">Country</option>
-                                    <option value="">India</option>
+                                <select name="country" id="" class="contact-input-box">
+                                    <option value="Country">Country</option>
+                                    <option value="India">India</option>
                                 </select>
+                                  <span class="text-danger">
+                     @error('country')
+                        {{$message}}
+                     @enderror
+                   </span>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="contact-input-box" placeholder="Email Address">
+                                <input type="email" name="email" class="contact-input-box" placeholder="Email Address">
+                                               <span class="text-danger">
+                     @error('email')
+                        {{$message}}
+                     @enderror
+                   </span>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="contact-input-box" placeholder="Mobile Number">
-                            </div>
+                                <input type="text" name="number" maxlength="10" oninput="this.value = this.value.replace(/[^0-9+.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="contact-input-box" placeholder="Mobile Number">
+                                               <span class="text-danger">
+                     @error('number')
+                        {{$message}}
+                     @enderror
+                   </span>
+                            </div> 
                         </div>
-                        <textarea name="" id="" cols="30" rows="3" class="contact-input-box" placeholder="Message"></textarea>
+                        <textarea name="message" id="" cols="30" rows="3" class="contact-input-box" placeholder="Message"></textarea>
+                                       <span class="text-danger">
+                     @error('message')
+                        {{$message}}
+                     @enderror
+                   </span>
                  
                         <div><button class="contact-submit-btn-show">Submit</button></div>
                     </form>
