@@ -8,7 +8,7 @@ use App\Models\Contact;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Testimonial;
-
+use App\Models\Homebanner;
 class HomeController extends Controller
 {
     public function index()
@@ -18,9 +18,10 @@ class HomeController extends Controller
         $seo_data['seo_description'] = $homepage->seo_des_home;
         $seo_data['keywords'] = $homepage->seo_key_home;
         $canocial ='https://shyamafoods.com/';
-        $productCat = Product::all();
-        $testimonal = Testimonial::all();
-        return view('home',compact('productCat','seo_data','canocial','testimonal'));
+        $productCat = Product::latest()->get();
+        $testimonal = Testimonial::latest()->get();
+        $banner = Homebanner::latest()->get();
+        return view('home',compact('productCat','seo_data','canocial','testimonal','banner'));
     }
    
   

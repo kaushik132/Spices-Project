@@ -4,95 +4,39 @@
     <!-- ============================== Banner ======================================= -->
     <section>
         <div class="container-fluid">
+
+
+
+            
+@foreach ($banner as $banners)
+    
+
             <div class="banner-slide">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="hero-section-details">
-                            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+                            <h1>{{$banners->title}}</h1>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Officiis amet omnis sit ab quae earum quis deserunt sapiente
-                                hic, aliquid blanditiis sed natus. Expedita exercitationem
-                                ratione accusantium quasi nostrum laborum!
+                               {!!$banners->description!!}
                             </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Officiis amet omnis sit ab quae earum quis deserunt sapiente
-                                hic, aliquid blanditiis sed natus. Expedita exercitationem
-                                ratione accusantium quasi nostrum laborum!
-                            </p>
-                            <a href="#"><button class="explore-more-btn">
-                                    Explore more <i class="bi bi-arrow-right"></i></button></a>
+                          @if ($banners->link != null)
+                              
+                          <a href="{{$banners->link}}" target="_blanck"><button class="explore-more-btn">
+                              Explore more <i class="bi bi-arrow-right"></i></button></a>
+                              @endif
                         </div>
                     </div>
                     <div class="col-md-5 mt-3">
                         <div>
-                            <img src="https://img.freepik.com/free-vector/spices-herbs-tag-decorated-with-leaves-dill-basil-bay-powder-curry-paprika-realistic-illustration_1284-61200.jpg?t=st=1744448080~exp=1744451680~hmac=9c14dc497906bfdec9a0922abd1a0c64b13d0cbc820ee3cb12d5019467a5a689&w=740"
+                            <img src="{{ url('uploads/' . $banners->image) }}"
                                 alt="banner-image" class="img-fluid" />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="banner-slide">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="hero-section-details">
-                            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Officiis amet omnis sit ab quae earum quis deserunt sapiente
-                                hic, aliquid blanditiis sed natus. Expedita exercitationem
-                                ratione accusantium quasi nostrum laborum!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Officiis amet omnis sit ab quae earum quis deserunt sapiente
-                                hic, aliquid blanditiis sed natus. Expedita exercitationem
-                                ratione accusantium quasi nostrum laborum!
-                            </p>
-                            <a href="#"><button class="explore-more-btn">
-                                    Explore more <i class="bi bi-arrow-right"></i></button></a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 mt-3">
-                        <div>
-                            <img src="https://img.freepik.com/free-vector/illustration-set-with-different-types-herbs-spices-vector-illustration_1284-12271.jpg?t=st=1744449008~exp=1744452608~hmac=d5716a70e3bda645c961d49e2c92c3ca56aecce3d9934ba09d10d2d2c012569d&w=740"
-                                alt="banner-image" class="img-fluid" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+@endforeach
 
-            <div class="banner-slide">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="hero-section-details">
-                            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Officiis amet omnis sit ab quae earum quis deserunt sapiente
-                                hic, aliquid blanditiis sed natus. Expedita exercitationem
-                                ratione accusantium quasi nostrum laborum!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Officiis amet omnis sit ab quae earum quis deserunt sapiente
-                                hic, aliquid blanditiis sed natus. Expedita exercitationem
-                                ratione accusantium quasi nostrum laborum!
-                            </p>
-                            <a href="#"><button class="explore-more-btn">
-                                    Explore more <i class="bi bi-arrow-right"></i></button></a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 mt-3">
-                        <div>
-                            <img src="https://img.freepik.com/premium-photo/close-up-various-spices-bowls-white-background_1048944-16942779.jpg?w=996"
-                                alt="banner-image" class="img-fluid" />
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
