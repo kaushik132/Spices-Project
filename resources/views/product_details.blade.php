@@ -59,7 +59,12 @@
                     <div class="product-main-details-box">
                         <h1>{{ $productData->product_name }}</h1>
                         {{-- <small>SKU: TP 100g 3(GS)</small> --}}
-                        <h2><span>&#8377;{{ $productData->descount_price }}</span> &#8377;{{ $productData->price }}</h2>
+                       <!-- Product Price -->
+<h2 id="product-price">
+    <span>&#8377;<span id="discount-price">{{ $productData->descount_price }}</span>
+    </span>
+    &#8377;<span id="original-price">{{ $productData->price }}</span>
+</h2>
                         <small>(Inclusive of all taxes)</small>
                         <p>{!! $productData->contant !!}</p>
 
@@ -79,15 +84,29 @@
 </div>
 
 <script>
+    // Base prices from server (set once)
+    const baseDiscountPrice = parseFloat({{ $productData->descount_price }});
+    const baseOriginalPrice = parseFloat({{ $productData->price }});
+
     document.getElementById('quantity-selector').addEventListener('change', function () {
         const multiplier = parseFloat(this.value);
+
+        // Update Prices
+        const discountPriceElem = document.getElementById('discount-price');
+        const originalPriceElem = document.getElementById('original-price');
+
+        const newDiscountPrice = (baseDiscountPrice * multiplier).toFixed(2);
+        const newOriginalPrice = (baseOriginalPrice * multiplier).toFixed(2);
+
+        discountPriceElem.textContent = newDiscountPrice;
+        originalPriceElem.textContent = newOriginalPrice;
+
+        // Update Description Table
         const descriptionDiv = document.getElementById('product-description');
 
-        // Clone original HTML
         const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = `{!! addslashes($productData->description) !!}`; // Safe encoding
+        tempDiv.innerHTML = `{!! addslashes($productData->description) !!}`;
 
-        // Loop through all table data cells
         const rows = tempDiv.querySelectorAll('tr');
         rows.forEach(row => {
             const th = row.querySelector('th')?.textContent.toLowerCase();
@@ -96,20 +115,16 @@
             if (!td) return;
 
             const originalValue = td.textContent.trim();
-
-            // Check if it's a measurable value
             const match = originalValue.match(/([\d\.]+)\s*([a-zA-Z]+)/);
             if (match) {
                 let value = parseFloat(match[1]);
                 let unit = match[2];
 
-                // Increase value
                 const newValue = (value * multiplier).toFixed(2);
                 td.textContent = newValue + unit;
             }
         });
 
-        // Replace HTML
         descriptionDiv.innerHTML = tempDiv.innerHTML;
     });
 </script>

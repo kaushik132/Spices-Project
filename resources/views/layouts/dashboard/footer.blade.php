@@ -27,33 +27,25 @@
             <div class="col-md-3 mt-3">
               <h6 class="title">Information</h6>
               <ul class="footer-list">
-                <li class="footer-list-item"><a href="#">Home</a></li>
-                <li class="footer-list-item"><a href="#">About Us</a></li>
-                    <li class="footer-list-item"><a href="#">Contact Us</a></li>
-                        <li class="footer-list-item"><a href="#">Blog</a></li>
-               <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
-               <li class="footer-list-item"><a href="#">Terms Of Use</a></li>
+                <li class="footer-list-item"><a href="{{url('/')}}">Home</a></li>
+                    <li class="footer-list-item"><a href="{{url('contact-us')}}">Contact Us</a></li>
+
+               <li class="footer-list-item"><a href="{{url('privacy-policy')}}">Privacy Policy</a></li>
+               <li class="footer-list-item"><a href="{{url('terms')}}">Terms Of Use</a></li>
               </ul>
             </div>
             <div class="col-md-3 mt-3">
                 <h6 class="title">Categories</h6>
                 <ul class="footer-list">
                  <li class="footer-list-item"><a href="#">Spices & Herbs</a></li>
-                 <li class="footer-list-item"><a href="#">Natural Flavorings & Extracts</a></li>
-                 <li class="footer-list-item"><a href="#">Spice Blends</a></li>
-                 <li class="footer-list-item"><a href="#">Salt-Free</a></li>
-                 <li class="footer-list-item"><a href="#">Seasonings</a></li>
-                 <li class="footer-list-item"><a href="#">CANDIED FRUITS</a></li>
+                
                 </ul>
             </div>
             <div class="col-md-3 mt-3">
                 <h6 class="title">Customer Service</h6>
                 <ul class="footer-list">
-                 <li class="footer-list-item"><a href="#">Contact</a></li>
-                 <li class="footer-list-item"><a href="#">Shipping Policy</a></li>
-                 <li class="footer-list-item"><a href="#">Refund Policy</a></li>
-                 <li class="footer-list-item"><a href="#">Cancellation Policy</a></li>
-                 
+                 <li class="footer-list-item"><a href="{{url('contact-us')}}">Contact</a></li>
+              
                 </ul>
             </div>
         </div>

@@ -95,6 +95,9 @@ class TitleController extends AdminController
         $form->text('seo_title_terms', __('Seo title terms'));
         $form->textarea('seo_des_terms', __('Seo des terms'));
         $form->textarea('seo_key_terms', __('Seo key terms'));
+        $form->text('seo_title_privacy', __('Seo title Privacy'));
+        $form->textarea('seo_des_privacy', __('Seo des Privacy'));
+        $form->textarea('seo_key_privacy', __('Seo key Privacy'));
 
         return $form;
     }
