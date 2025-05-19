@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2025 at 03:15 PM
+-- Generation Time: May 19, 2025 at 09:25 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -58,7 +58,13 @@ INSERT INTO `admin_menu` (`id`, `parent_id`, `order`, `title`, `icon`, `uri`, `p
 (12, 8, 14, 'Routes', 'icon-list-alt', 'helpers/routes', NULL, '2025-05-13 23:57:01', '2025-05-14 01:09:05'),
 (13, 14, 3, 'Product-categories', 'icon-file', 'product-categories', NULL, '2025-05-14 01:02:08', '2025-05-14 01:09:05'),
 (14, 0, 2, 'Product', 'icon-ice-cream', NULL, 'ext.helpers', '2025-05-14 01:07:58', '2025-05-14 01:09:05'),
-(15, 14, 14, 'Products', 'icon-file', 'products', NULL, '2025-05-14 01:17:44', '2025-05-14 03:53:53');
+(15, 14, 14, 'Products', 'icon-file', 'products', NULL, '2025-05-14 01:17:44', '2025-05-14 03:53:53'),
+(16, 0, 14, 'Titles', 'icon-file', 'titles', NULL, '2025-05-17 00:29:35', '2025-05-17 00:29:35'),
+(17, 0, 14, 'Contacts', 'icon-file', 'contacts', NULL, '2025-05-17 01:33:02', '2025-05-17 01:33:02'),
+(18, 0, 14, 'Testimonials', 'icon-file', 'testimonials', NULL, '2025-05-17 03:19:13', '2025-05-17 03:19:13'),
+(19, 0, 14, 'Homebanners', 'icon-file', 'homebanners', NULL, '2025-05-17 04:59:46', '2025-05-17 04:59:46'),
+(20, 0, 14, 'Privacies', 'icon-file', 'privacies', NULL, '2025-05-19 00:11:24', '2025-05-19 00:11:24'),
+(21, 0, 14, 'Terms', 'icon-file', 'terms', NULL, '2025-05-19 00:12:20', '2025-05-19 00:12:20');
 
 -- --------------------------------------------------------
 
@@ -631,7 +637,161 @@ INSERT INTO `admin_operation_log` (`id`, `user_id`, `path`, `method`, `ip`, `inp
 (545, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-15 01:22:07', '2025-05-15 01:22:07'),
 (546, 1, 'admin/products/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-15 01:22:09', '2025-05-15 01:22:09'),
 (547, 1, 'admin/products/1', 'PUT', '127.0.0.1', '{\"product_id\":\"1\",\"search_terms\":null,\"product_name\":\"Reagan Farmer\",\"slug\":\"reagan-farmer\",\"descount_price\":\"780\",\"price\":\"600\",\"contant\":\"<p>Voluptatibus optio<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>358.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>4.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>77.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;1g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>3.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"twitter\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"instagram\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"linkedin\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"_token\":\"jN3H38ZNC2oNQspDTeFm7cQ54E0bWmBib8UiH4rR\",\"_method\":\"PUT\"}', '2025-05-15 01:22:21', '2025-05-15 01:22:21'),
-(548, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-15 01:22:21', '2025-05-15 01:22:21');
+(548, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-15 01:22:21', '2025-05-15 01:22:21'),
+(549, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-05-16 23:40:26', '2025-05-16 23:40:26'),
+(550, 1, 'admin/auth/setting', 'GET', '127.0.0.1', '[]', '2025-05-16 23:40:38', '2025-05-16 23:40:38'),
+(551, 1, 'admin/auth/setting', 'PUT', '127.0.0.1', '{\"name\":\"Administrator\",\"password\":\"*****-filtered-out-*****\",\"password_confirmation\":\"$2y$12$qpgzcq\\/d39DL3f9McXrS7u3iihDUo1K7\\/sQ6ruYhthM7lsLlJSq6C\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-16 23:40:58', '2025-05-16 23:40:58'),
+(552, 1, 'admin/auth/setting', 'GET', '127.0.0.1', '[]', '2025-05-16 23:40:59', '2025-05-16 23:40:59'),
+(553, 1, 'admin/auth/setting', 'GET', '127.0.0.1', '[]', '2025-05-16 23:41:02', '2025-05-16 23:41:02'),
+(554, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-05-16 23:41:04', '2025-05-16 23:41:04'),
+(555, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-05-16 23:42:10', '2025-05-16 23:42:10'),
+(556, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-05-16 23:42:40', '2025-05-16 23:42:40'),
+(557, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-05-16 23:42:49', '2025-05-16 23:42:49'),
+(558, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-16 23:43:09', '2025-05-16 23:43:09'),
+(559, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-16 23:50:52', '2025-05-16 23:50:52'),
+(560, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-16 23:50:54', '2025-05-16 23:50:54'),
+(561, 1, 'admin/products/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-16 23:51:00', '2025-05-16 23:51:00'),
+(562, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 00:21:51', '2025-05-17 00:21:51'),
+(563, 1, 'admin/products/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 00:21:53', '2025-05-17 00:21:53'),
+(564, 1, 'admin/products/2', 'PUT', '127.0.0.1', '{\"product_id\":\"2\",\"search_terms\":null,\"product_name\":\"Bethany Roach\",\"slug\":\"bethany-roach\",\"descount_price\":\"30\",\"price\":\"27\",\"contant\":\"<p>sdaasdsadsa<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>3582.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>42.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>772.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;12g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>31.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":null,\"whatsapp\":null,\"instagram\":null,\"linkedin\":null,\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 00:22:19', '2025-05-17 00:22:19'),
+(565, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 00:22:20', '2025-05-17 00:22:20'),
+(566, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"title\",\"model_name\":\"App\\\\Models\\\\Title\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\TitleController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"seo_title_home\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des_home\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key_home\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_product\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des_product\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key_product\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_contact\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des_contact\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key_contact\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_terms\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_terms\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_terms\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 00:29:11', '2025-05-17 00:29:11'),
+(567, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 00:29:12', '2025-05-17 00:29:12'),
+(568, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"title\",\"model_name\":\"App\\\\Models\\\\Title\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\TitleController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"seo_title_home\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des_home\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key_home\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_product\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des_product\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key_product\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_contact\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des_contact\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key_contact\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_title_terms\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_des_terms\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"seo_key_terms\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 00:29:35', '2025-05-17 00:29:35'),
+(569, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 00:29:38', '2025-05-17 00:29:38'),
+(570, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 00:29:49', '2025-05-17 00:29:49'),
+(571, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-17 00:29:51', '2025-05-17 00:29:51'),
+(572, 1, 'admin/titles/create', 'GET', '127.0.0.1', '[]', '2025-05-17 00:29:53', '2025-05-17 00:29:53'),
+(573, 1, 'admin/titles', 'POST', '127.0.0.1', '{\"seo_title_home\":\"home title\",\"seo_des_home\":\"home des\",\"seo_key_home\":\"home key\",\"seo_title_product\":\"product title\",\"seo_des_product\":\"product des\",\"seo_key_product\":\"product key\",\"seo_title_contact\":\"contact title\",\"seo_des_contact\":\"contact des\",\"seo_key_contact\":\"contact key\",\"seo_title_terms\":\"terms title\",\"seo_des_terms\":\"terms des\",\"seo_key_terms\":\"terms key\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 00:31:42', '2025-05-17 00:31:42'),
+(574, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-17 00:31:42', '2025-05-17 00:31:42'),
+(575, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-17 01:24:37', '2025-05-17 01:24:37'),
+(576, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 01:24:47', '2025-05-17 01:24:47'),
+(577, 1, 'admin/products/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 01:24:49', '2025-05-17 01:24:49'),
+(578, 1, 'admin/products/1', 'PUT', '127.0.0.1', '{\"product_id\":\"1\",\"search_terms\":null,\"product_name\":\"Reagan Farmer\",\"slug\":\"reagan-farmer\",\"descount_price\":\"780\",\"price\":\"600\",\"contant\":\"<p>Voluptatibus optio<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>358.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>4.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>77.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;1g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>3.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"whatsapp\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"instagram\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"linkedin\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"seo_title\":\"Reprehenderit proid\",\"seo_des\":\"Quas ullam illo id e\",\"seo_key\":\"Non quod officiis mi\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 01:24:55', '2025-05-17 01:24:55'),
+(579, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 01:24:56', '2025-05-17 01:24:56'),
+(580, 1, 'admin/products/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 01:24:57', '2025-05-17 01:24:57'),
+(581, 1, 'admin/products/2', 'PUT', '127.0.0.1', '{\"product_id\":\"2\",\"search_terms\":null,\"product_name\":\"Bethany Roach\",\"slug\":\"bethany-roach\",\"descount_price\":\"30\",\"price\":\"27\",\"contant\":\"<p>sdaasdsadsa<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>3582.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>42.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>772.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;12g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>31.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":null,\"whatsapp\":null,\"instagram\":null,\"linkedin\":null,\"seo_title\":\"Animi sunt corpori\",\"seo_des\":\"Cum qui minima id e\",\"seo_key\":\"Velit repudiandae au\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 01:25:02', '2025-05-17 01:25:02'),
+(582, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 01:25:02', '2025-05-17 01:25:02'),
+(583, 1, 'admin/products/3/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 01:25:04', '2025-05-17 01:25:04'),
+(584, 1, 'admin/products/3', 'PUT', '127.0.0.1', '{\"product_id\":\"1\",\"search_terms\":null,\"product_name\":\"Laith Dickerson\",\"slug\":\"laith-dickerson\",\"descount_price\":\"882\",\"price\":\"664\",\"contant\":\"<p>wdwdwdqedwq<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>358.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>4.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>77.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;1g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>3.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":null,\"whatsapp\":null,\"instagram\":null,\"linkedin\":null,\"seo_title\":\"Minim voluptatibus a\",\"seo_des\":\"Aperiam vitae veniam\",\"seo_key\":\"Beatae tempora maxim\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"after-save\":\"view\",\"_method\":\"PUT\"}', '2025-05-17 01:25:09', '2025-05-17 01:25:09'),
+(585, 1, 'admin/products/3', 'GET', '127.0.0.1', '[]', '2025-05-17 01:25:09', '2025-05-17 01:25:09'),
+(586, 1, 'admin/product-categories', 'GET', '127.0.0.1', '[]', '2025-05-17 01:25:12', '2025-05-17 01:25:12'),
+(587, 1, 'admin/product-categories/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 01:25:14', '2025-05-17 01:25:14'),
+(588, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 01:25:17', '2025-05-17 01:25:17'),
+(589, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 01:29:57', '2025-05-17 01:29:57'),
+(590, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"contact\",\"model_name\":\"App\\\\Models\\\\Contact\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\ContactController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"name\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"company\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"address\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"postal_address\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"city\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"country\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"email\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"number\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"message\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 01:33:02', '2025-05-17 01:33:02'),
+(591, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 01:33:03', '2025-05-17 01:33:03'),
+(592, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 01:33:23', '2025-05-17 01:33:23'),
+(593, 1, 'admin/contacts', 'GET', '127.0.0.1', '[]', '2025-05-17 01:33:26', '2025-05-17 01:33:26'),
+(594, 1, 'admin/contacts/create', 'GET', '127.0.0.1', '[]', '2025-05-17 01:33:28', '2025-05-17 01:33:28'),
+(595, 1, 'admin/contacts', 'POST', '127.0.0.1', '{\"name\":\"Deacon Farmer\",\"company\":\"Peterson and Ruiz Trading\",\"address\":\"Enim ut sint ut des\",\"postal_address\":\"Reiciendis non repre\",\"city\":\"Veritatis esse et di\",\"country\":\"At aut rerum dolores\",\"email\":\"migu@mailinator.com\",\"number\":\"1234567890\",\"message\":\"Praesentium consequa\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 01:33:39', '2025-05-17 01:33:39'),
+(596, 1, 'admin/contacts', 'GET', '127.0.0.1', '[]', '2025-05-17 01:33:39', '2025-05-17 01:33:39'),
+(597, 1, 'admin/contacts', 'GET', '127.0.0.1', '[]', '2025-05-17 01:50:12', '2025-05-17 01:50:12'),
+(598, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-17 01:56:21', '2025-05-17 01:56:21'),
+(599, 1, 'admin/titles/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 01:56:22', '2025-05-17 01:56:22'),
+(600, 1, 'admin/titles/1', 'PUT', '127.0.0.1', '{\"seo_title_home\":\"home title\",\"seo_des_home\":\"home des\",\"seo_key_home\":\"home key\",\"seo_title_product\":\"product title\",\"seo_des_product\":\"product des\",\"seo_key_product\":\"product key\",\"seo_title_contact\":\"contact title\",\"seo_des_contact\":\"contact des\",\"seo_key_contact\":\"contact key\",\"seo_title_terms\":\"terms title\",\"seo_des_terms\":\"terms des\",\"seo_key_terms\":\"terms key\",\"seo_title_privacy\":\"privacy title\",\"seo_des_privacy\":\"privacy des\",\"seo_key_privacy\":\"privacy key\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 01:56:47', '2025-05-17 01:56:47'),
+(601, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-17 01:56:47', '2025-05-17 01:56:47'),
+(602, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 03:05:12', '2025-05-17 03:05:12'),
+(603, 1, 'admin/products/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:05:17', '2025-05-17 03:05:17'),
+(604, 1, 'admin/products/2', 'PUT', '127.0.0.1', '{\"product_id\":\"2\",\"search_terms\":null,\"product_name\":\"Bethany Roach\",\"slug\":\"bethany-roach\",\"descount_price\":\"2\",\"price\":\"1\",\"contant\":\"<p>sdaasdsadsa<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>3582.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>42.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>772.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;12g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>31.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":null,\"whatsapp\":null,\"instagram\":null,\"linkedin\":null,\"seo_title\":\"Animi sunt corpori\",\"seo_des\":\"Cum qui minima id e\",\"seo_key\":\"Velit repudiandae au\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 03:06:20', '2025-05-17 03:06:20'),
+(605, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 03:06:20', '2025-05-17 03:06:20'),
+(606, 1, 'admin/products/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:07:55', '2025-05-17 03:07:55'),
+(607, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 03:08:00', '2025-05-17 03:08:00'),
+(608, 1, 'admin/products/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:08:34', '2025-05-17 03:08:34'),
+(609, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 03:17:51', '2025-05-17 03:17:51'),
+(610, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"testimonials\",\"model_name\":\"App\\\\Models\\\\Testimonial\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\TestimonialController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"name\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"role\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"star\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"description\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 03:19:11', '2025-05-17 03:19:11'),
+(611, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 03:19:14', '2025-05-17 03:19:14'),
+(612, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 03:19:55', '2025-05-17 03:19:55'),
+(613, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:19:57', '2025-05-17 03:19:57'),
+(614, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 03:20:30', '2025-05-17 03:20:30'),
+(615, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:20:33', '2025-05-17 03:20:33'),
+(616, 1, 'admin/testimonials/create', 'GET', '127.0.0.1', '[]', '2025-05-17 03:20:34', '2025-05-17 03:20:34'),
+(617, 1, 'admin/testimonials', 'POST', '127.0.0.1', '{\"name\":\"Keefe Logan\",\"role\":\"Ullamco sit vel iru\",\"star\":\"2\",\"description\":\"Vero expedita error\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 03:20:48', '2025-05-17 03:20:48'),
+(618, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:20:48', '2025-05-17 03:20:48'),
+(619, 1, 'admin/testimonials/create', 'GET', '127.0.0.1', '[]', '2025-05-17 03:20:51', '2025-05-17 03:20:51'),
+(620, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:21:07', '2025-05-17 03:21:07'),
+(621, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:21:09', '2025-05-17 03:21:09'),
+(622, 1, 'admin/testimonials/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:21:14', '2025-05-17 03:21:14'),
+(623, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:21:28', '2025-05-17 03:21:28'),
+(624, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:21:30', '2025-05-17 03:21:30'),
+(625, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:21:53', '2025-05-17 03:21:53'),
+(626, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:22:07', '2025-05-17 03:22:07'),
+(627, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:23:05', '2025-05-17 03:23:05'),
+(628, 1, 'admin/testimonials/create', 'GET', '127.0.0.1', '[]', '2025-05-17 03:23:51', '2025-05-17 03:23:51'),
+(629, 1, 'admin/testimonials', 'POST', '127.0.0.1', '{\"name\":\"MacKenzie Knight\",\"role\":\"Obcaecati qui quo ve\",\"star\":\"4\",\"description\":\"Ipsum in aut distinc\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 03:24:00', '2025-05-17 03:24:00'),
+(630, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:24:01', '2025-05-17 03:24:01'),
+(631, 1, 'admin/testimonials/create', 'GET', '127.0.0.1', '[]', '2025-05-17 03:24:03', '2025-05-17 03:24:03'),
+(632, 1, 'admin/testimonials', 'POST', '127.0.0.1', '{\"name\":\"Maggie Stanley\",\"role\":\"Sed sequi non beatae\",\"star\":\"3.5\",\"description\":\"Reiciendis rem volup\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"after-save\":\"view\"}', '2025-05-17 03:24:15', '2025-05-17 03:24:15'),
+(633, 1, 'admin/testimonials/3', 'GET', '127.0.0.1', '[]', '2025-05-17 03:24:15', '2025-05-17 03:24:15'),
+(634, 1, 'admin/testimonials/create', 'GET', '127.0.0.1', '[]', '2025-05-17 03:24:20', '2025-05-17 03:24:20'),
+(635, 1, 'admin/testimonials', 'POST', '127.0.0.1', '{\"name\":\"Zahir Kline\",\"role\":\"Et sit voluptas sus\",\"star\":\"3\",\"description\":\"Accusamus autem amet\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 03:24:28', '2025-05-17 03:24:28'),
+(636, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:24:29', '2025-05-17 03:24:29'),
+(637, 1, 'admin/testimonials/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:39:21', '2025-05-17 03:39:21'),
+(638, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:39:24', '2025-05-17 03:39:24'),
+(639, 1, 'admin/testimonials/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:39:27', '2025-05-17 03:39:27'),
+(640, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-17 03:39:30', '2025-05-17 03:39:30'),
+(641, 1, 'admin/testimonials/3/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:39:32', '2025-05-17 03:39:32'),
+(642, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 03:48:56', '2025-05-17 03:48:56'),
+(643, 1, 'admin/products/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 03:48:57', '2025-05-17 03:48:57'),
+(644, 1, 'admin/products/2', 'PUT', '127.0.0.1', '{\"product_id\":\"2\",\"search_terms\":null,\"product_name\":\"Bethany Roach\",\"slug\":\"bethany-roach\",\"descount_price\":\"50\",\"price\":\"15\",\"contant\":\"<p>sdaasdsadsa<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>3582.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>42.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>772.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;12g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>31.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":null,\"whatsapp\":null,\"instagram\":null,\"linkedin\":null,\"seo_title\":\"Animi sunt corpori\",\"seo_des\":\"Cum qui minima id e\",\"seo_key\":\"Velit repudiandae au\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 03:50:19', '2025-05-17 03:50:19'),
+(645, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-17 03:50:20', '2025-05-17 03:50:20'),
+(646, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 04:58:36', '2025-05-17 04:58:36'),
+(647, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"homebanner\",\"model_name\":\"App\\\\Models\\\\Homebanner\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\HomeBannerController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"title\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"description\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"link\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 04:59:46', '2025-05-17 04:59:46'),
+(648, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 04:59:47', '2025-05-17 04:59:47'),
+(649, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-17 05:00:11', '2025-05-17 05:00:11'),
+(650, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-17 05:01:06', '2025-05-17 05:01:06'),
+(651, 1, 'admin/homebanners/create', 'GET', '127.0.0.1', '[]', '2025-05-17 05:01:08', '2025-05-17 05:01:08'),
+(652, 1, 'admin/homebanners/create', 'GET', '127.0.0.1', '[]', '2025-05-17 05:02:50', '2025-05-17 05:02:50'),
+(653, 1, 'admin/homebanners', 'POST', '127.0.0.1', '{\"title\":\"Esse sint enim pari\",\"description\":\"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!\\r\\n\\r\\nLorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!\",\"link\":\"https:\\/\\/www.firixalaxovul.info\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\"}', '2025-05-17 05:03:02', '2025-05-17 05:03:02'),
+(654, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-17 05:03:02', '2025-05-17 05:03:02'),
+(655, 1, 'admin/homebanners/create', 'GET', '127.0.0.1', '[]', '2025-05-17 05:03:05', '2025-05-17 05:03:05'),
+(656, 1, 'admin/homebanners/create', 'GET', '127.0.0.1', '[]', '2025-05-17 05:03:13', '2025-05-17 05:03:13'),
+(657, 1, 'admin/homebanners', 'POST', '127.0.0.1', '{\"title\":\"Modi eiusmod id bla\",\"description\":\"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!\\r\\n\\r\\nLorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!\",\"link\":\"https:\\/\\/www.duzacijibinezyw.in\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"after-save\":\"view\"}', '2025-05-17 05:03:50', '2025-05-17 05:03:50'),
+(658, 1, 'admin/homebanners/create', 'GET', '127.0.0.1', '[]', '2025-05-17 05:03:50', '2025-05-17 05:03:50'),
+(659, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-17 05:04:38', '2025-05-17 05:04:38'),
+(660, 1, 'admin/homebanners/create', 'GET', '127.0.0.1', '[]', '2025-05-17 05:04:41', '2025-05-17 05:04:41'),
+(661, 1, 'admin/homebanners', 'POST', '127.0.0.1', '{\"title\":\"Suscipit sunt magnam\",\"description\":\"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!\\r\\n\\r\\nLorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!\",\"link\":\"https:\\/\\/www.qetixeweduf.me.uk\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"after-save\":\"view\"}', '2025-05-17 05:04:50', '2025-05-17 05:04:50'),
+(662, 1, 'admin/homebanners/2', 'GET', '127.0.0.1', '[]', '2025-05-17 05:04:50', '2025-05-17 05:04:50'),
+(663, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-17 05:04:53', '2025-05-17 05:04:53'),
+(664, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-17 05:05:04', '2025-05-17 05:05:04'),
+(665, 1, 'admin/homebanners/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 05:05:34', '2025-05-17 05:05:34'),
+(666, 1, 'admin/homebanners/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 05:12:13', '2025-05-17 05:12:13'),
+(667, 1, 'admin/homebanners/1', 'PUT', '127.0.0.1', '{\"title\":\"Esse sint enim pari\",\"description\":\"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!<\\/p>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!<\\/p>\",\"link\":\"https:\\/\\/www.firixalaxovul.info\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 05:12:17', '2025-05-17 05:12:17'),
+(668, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-17 05:12:18', '2025-05-17 05:12:18'),
+(669, 1, 'admin/homebanners/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-17 05:12:20', '2025-05-17 05:12:20'),
+(670, 1, 'admin/homebanners/2', 'PUT', '127.0.0.1', '{\"title\":\"Suscipit sunt magnam\",\"description\":\"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!<\\/p>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!<\\/p>\",\"link\":\"https:\\/\\/www.qetixeweduf.me.uk\",\"_token\":\"Cg4VJJG8i8Dacl63jSPvXhPhgPpvL4P6lou6Sulp\",\"_method\":\"PUT\"}', '2025-05-17 05:12:24', '2025-05-17 05:12:24'),
+(671, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-17 05:12:24', '2025-05-17 05:12:24'),
+(672, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-05-18 23:24:21', '2025-05-18 23:24:21'),
+(673, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-18 23:24:42', '2025-05-18 23:24:42'),
+(674, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-18 23:24:46', '2025-05-18 23:24:46'),
+(675, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-19 00:10:01', '2025-05-19 00:10:01'),
+(676, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"privacy\",\"model_name\":\"App\\\\Models\\\\Privacy\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\PrivacyController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"description\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:11:23', '2025-05-19 00:11:23'),
+(677, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-19 00:11:26', '2025-05-19 00:11:26'),
+(678, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"terms\",\"model_name\":\"App\\\\Models\\\\Terms\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\TermsController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"description\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:12:19', '2025-05-19 00:12:19'),
+(679, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-19 00:12:20', '2025-05-19 00:12:20'),
+(680, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-19 00:13:28', '2025-05-19 00:13:28'),
+(681, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-19 00:13:32', '2025-05-19 00:13:32'),
+(682, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-19 00:13:34', '2025-05-19 00:13:34'),
+(683, 1, 'admin/privacies', 'GET', '127.0.0.1', '[]', '2025-05-19 00:13:38', '2025-05-19 00:13:38'),
+(684, 1, 'admin/privacies/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:14:25', '2025-05-19 00:14:25'),
+(685, 1, 'admin/privacies/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:16:14', '2025-05-19 00:16:14'),
+(686, 1, 'admin/privacies', 'POST', '127.0.0.1', '{\"description\":\"<h1>Privacy Policy<\\/h1>\\r\\n\\r\\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.<\\/p>\\r\\n\\r\\n<h2>1. Acceptance of Terms<\\/h2>\\r\\n\\r\\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.<\\/p>\\r\\n\\r\\n<h2>2. Changes to Terms<\\/h2>\\r\\n\\r\\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.<\\/p>\\r\\n\\r\\n<h2>3. User Responsibilities<\\/h2>\\r\\n\\r\\n<p>You are responsible for your use of our services and for any content you post.<\\/p>\\r\\n\\r\\n<h2>4. Limitation of Liability<\\/h2>\\r\\n\\r\\n<p>We are not liable for any damages arising from your use of our services.<\\/p>\\r\\n\\r\\n<h3>5. Governing Law<\\/h3>\\r\\n\\r\\n<p>These terms are governed by the laws of [Your Country].<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!<\\/li>\\r\\n<\\/ul>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet.<\\/p>\\r\\n\\r\\n<ol>\\r\\n\\t<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?<\\/li>\\r\\n<\\/ol>\",\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:16:26', '2025-05-19 00:16:26'),
+(687, 1, 'admin/privacies', 'GET', '127.0.0.1', '[]', '2025-05-19 00:16:27', '2025-05-19 00:16:27'),
+(688, 1, 'admin/privacies/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:16:30', '2025-05-19 00:16:30'),
+(689, 1, 'admin/privacies', 'POST', '127.0.0.1', '{\"description\":null,\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:16:48', '2025-05-19 00:16:48'),
+(690, 1, 'admin/privacies', 'GET', '127.0.0.1', '[]', '2025-05-19 00:16:49', '2025-05-19 00:16:49'),
+(691, 1, 'admin/privacies/2', 'DELETE', '127.0.0.1', '{\"_method\":\"delete\",\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:16:54', '2025-05-19 00:16:54'),
+(692, 1, 'admin/privacies', 'GET', '127.0.0.1', '[]', '2025-05-19 00:16:55', '2025-05-19 00:16:55'),
+(693, 1, 'admin/privacies/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-19 00:16:58', '2025-05-19 00:16:58'),
+(694, 1, 'admin/privacies', 'GET', '127.0.0.1', '[]', '2025-05-19 00:17:05', '2025-05-19 00:17:05'),
+(695, 1, 'admin/privacies', 'GET', '127.0.0.1', '[]', '2025-05-19 00:17:29', '2025-05-19 00:17:29'),
+(696, 1, 'admin/terms', 'GET', '127.0.0.1', '[]', '2025-05-19 00:17:31', '2025-05-19 00:17:31'),
+(697, 1, 'admin/terms/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:17:42', '2025-05-19 00:17:42'),
+(698, 1, 'admin/terms', 'POST', '127.0.0.1', '{\"description\":\"<h1>Terms of Service<\\/h1>\\r\\n\\r\\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.<\\/p>\\r\\n\\r\\n<h2>1. Acceptance of Terms<\\/h2>\\r\\n\\r\\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.<\\/p>\\r\\n\\r\\n<h2>2. Changes to Terms<\\/h2>\\r\\n\\r\\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.<\\/p>\\r\\n\\r\\n<h2>3. User Responsibilities<\\/h2>\\r\\n\\r\\n<p>You are responsible for your use of our services and for any content you post.<\\/p>\\r\\n\\r\\n<h2>4. Limitation of Liability<\\/h2>\\r\\n\\r\\n<p>We are not liable for any damages arising from your use of our services.<\\/p>\\r\\n\\r\\n<h3>5. Governing Law<\\/h3>\\r\\n\\r\\n<p>These terms are governed by the laws of [Your Country].<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!<\\/li>\\r\\n<\\/ul>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet.<\\/p>\\r\\n\\r\\n<ol>\\r\\n\\t<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?<\\/li>\\r\\n<\\/ol>\",\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:17:55', '2025-05-19 00:17:55'),
+(699, 1, 'admin/terms/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:17:56', '2025-05-19 00:17:56'),
+(700, 1, 'admin/terms/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:18:32', '2025-05-19 00:18:32'),
+(701, 1, 'admin/terms', 'POST', '127.0.0.1', '{\"description\":\"<h1>Terms of Service<\\/h1>\\r\\n\\r\\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.<\\/p>\\r\\n\\r\\n<h2>1. Acceptance of Terms<\\/h2>\\r\\n\\r\\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.<\\/p>\\r\\n\\r\\n<h2>2. Changes to Terms<\\/h2>\\r\\n\\r\\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.<\\/p>\\r\\n\\r\\n<h2>3. User Responsibilities<\\/h2>\\r\\n\\r\\n<p>You are responsible for your use of our services and for any content you post.<\\/p>\\r\\n\\r\\n<h2>4. Limitation of Liability<\\/h2>\\r\\n\\r\\n<p>We are not liable for any damages arising from your use of our services.<\\/p>\\r\\n\\r\\n<h3>5. Governing Law<\\/h3>\\r\\n\\r\\n<p>These terms are governed by the laws of [Your Country].<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!<\\/li>\\r\\n<\\/ul>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet.<\\/p>\\r\\n\\r\\n<ol>\\r\\n\\t<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?<\\/li>\\r\\n<\\/ol>\",\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:18:40', '2025-05-19 00:18:40'),
+(702, 1, 'admin/terms', 'GET', '127.0.0.1', '[]', '2025-05-19 00:18:40', '2025-05-19 00:18:40');
 
 -- --------------------------------------------------------
 
@@ -765,7 +925,7 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `username`, `password`, `name`, `avatar`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '$2y$12$qpgzcq/d39DL3f9McXrS7u3iihDUo1K7/sQ6ruYhthM7lsLlJSq6C', 'Administrator', 'images/logo_1.png', NULL, '2025-05-13 23:55:55', '2025-05-14 02:21:56');
+(1, 'admin', '$2y$12$qpgzcq/d39DL3f9McXrS7u3iihDUo1K7/sQ6ruYhthM7lsLlJSq6C', 'Administrator', 'images/Expert Assistance.png', NULL, '2025-05-13 23:55:55', '2025-05-16 23:40:59');
 
 -- --------------------------------------------------------
 
@@ -783,6 +943,36 @@ CREATE TABLE `admin_user_permissions` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postal_address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `company`, `address`, `postal_address`, `city`, `country`, `email`, `number`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'Deacon Farmer', 'Peterson and Ruiz Trading', 'Enim ut sint ut des', 'Reiciendis non repre', 'Veritatis esse et di', 'At aut rerum dolores', 'migu@mailinator.com', '1234567890', 'Praesentium consequa', '2025-05-17 01:33:39', '2025-05-17 01:33:39'),
+(2, 'KasperPeterson', 'Park and Blair LLC', 'Ut dolore officia di', 'Vel optio dolor fug', 'Jaipur', 'India', 'fycuk@mailinator.com', '517', 'Proident laborum se', '2025-05-17 01:49:37', '2025-05-17 01:49:37'),
+(3, 'HonoratoDeleon', 'Goodman Frost Plc', 'Qui accusantium quae', 'Sint labore cumque', 'Jaipur', 'India', 'pefyqus@mailinator.com', '146', 'Labore nisi quia ips', '2025-05-17 01:50:06', '2025-05-17 01:50:06');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -795,6 +985,30 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `homebanner`
+--
+
+CREATE TABLE `homebanner` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `homebanner`
+--
+
+INSERT INTO `homebanner` (`id`, `image`, `title`, `description`, `link`, `created_at`, `updated_at`) VALUES
+(1, 'images/illustration-set-with-different-types-herbs-spices-vector-illustration_1284-12271.jpg', 'Esse sint enim pari', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!</p>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!</p>', 'https://www.firixalaxovul.info', '2025-05-17 05:03:02', '2025-05-17 05:12:17'),
+(2, 'images/diveristy-condiments-frame-with-copy-space.jpg', 'Suscipit sunt magnam', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!</p>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis amet omnis sit ab quae earum quis deserunt sapiente hic, aliquid blanditiis sed natus. Expedita exercitationem ratione accusantium quasi nostrum laborum!</p>', 'https://www.qetixeweduf.me.uk', '2025-05-17 05:04:50', '2025-05-17 05:12:24');
 
 -- --------------------------------------------------------
 
@@ -819,7 +1033,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_08_19_000000_create_failed_jobs_table', 1),
 (5, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (6, '2025_05_14_063208_create_product_category_table', 2),
-(7, '2025_05_14_064744_create_product_table', 3);
+(7, '2025_05_14_064744_create_product_table', 3),
+(8, '2025_05_17_055935_create_title_table', 4),
+(9, '2025_05_17_070302_create_contact_table', 5),
+(10, '2025_05_17_084911_create_testimonials_table', 6),
+(11, '2025_05_17_102946_create_homebanner_table', 7),
+(12, '2025_05_19_054123_create_privacy_table', 8),
+(13, '2025_05_19_054220_create_terms_table', 9);
 
 -- --------------------------------------------------------
 
@@ -855,6 +1075,27 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `privacy`
+--
+
+CREATE TABLE `privacy` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `privacy`
+--
+
+INSERT INTO `privacy` (`id`, `image`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'images/Private-Policy.jpg', '<h1>Privacy Policy</h1>\r\n\r\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.</p>\r\n\r\n<h2>1. Acceptance of Terms</h2>\r\n\r\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.</p>\r\n\r\n<h2>2. Changes to Terms</h2>\r\n\r\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.</p>\r\n\r\n<h2>3. User Responsibilities</h2>\r\n\r\n<p>You are responsible for your use of our services and for any content you post.</p>\r\n\r\n<h2>4. Limitation of Liability</h2>\r\n\r\n<p>We are not liable for any damages arising from your use of our services.</p>\r\n\r\n<h3>5. Governing Law</h3>\r\n\r\n<p>These terms are governed by the laws of [Your Country].</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!</li>\r\n</ul>\r\n\r\n<p>Lorem ipsum dolor sit amet.</p>\r\n\r\n<ol>\r\n	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?</li>\r\n</ol>', '2025-05-19 00:16:26', '2025-05-19 00:16:26');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -870,23 +1111,26 @@ CREATE TABLE `product` (
   `contant` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `whatsapp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `instagram` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `linkedin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `itinerary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `seo_title` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `product_name`, `slug`, `product_id`, `image`, `pictures`, `descount_price`, `price`, `contant`, `description`, `facebook`, `twitter`, `instagram`, `linkedin`, `itinerary`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Reagan Farmer', 'reagan-farmer', '1', 'images/about-us-image.png', '[\"product_banner\\/qualityicon-1.jpg\",\"product_banner\\/qualityicon-2.jpg\",\"product_banner\\/qualityicon-3.jpg\",\"product_banner\\/qualityicon-4.jpg\"]', '780', '600', '<p>Voluptatibus optio</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'At veniam elit off', 1, '2025-05-14 01:46:03', '2025-05-15 01:22:21'),
-(2, 'Bethany Roach', 'bethany-roach', '2', 'images/logo_1.png', '[\"product_banner\\/qualityicon-2_2.jpg\",\"product_banner\\/qualityicon-3_2.jpg\",\"product_banner\\/qualityicon-4_2.jpg\"]', '30', '27', '<p>sdaasdsadsa</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, 'asdsad', 1, '2025-05-14 03:58:23', '2025-05-15 01:22:00'),
-(3, 'Laith Dickerson', 'laith-dickerson', '1', 'images/Fullmetal Alchemist.jpg', '[\"product_banner\\/21615.jpg\",\"product_banner\\/21633.jpg\",\"product_banner\\/21635.jpg\"]', '882', '664', '<p>wdwdwdqedwq</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, NULL, 1, '2025-05-14 05:12:05', '2025-05-15 00:14:50');
+INSERT INTO `product` (`id`, `product_name`, `slug`, `product_id`, `image`, `pictures`, `descount_price`, `price`, `contant`, `description`, `facebook`, `whatsapp`, `instagram`, `linkedin`, `itinerary`, `status`, `created_at`, `updated_at`, `seo_title`, `seo_des`, `seo_key`) VALUES
+(1, 'Reagan Farmer', 'reagan-farmer', '1', 'images/about-us-image.png', '[\"product_banner\\/qualityicon-1.jpg\",\"product_banner\\/qualityicon-2.jpg\",\"product_banner\\/qualityicon-3.jpg\",\"product_banner\\/qualityicon-4.jpg\"]', '780', '600', '<p>Voluptatibus optio</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'At veniam elit off', 1, '2025-05-14 01:46:03', '2025-05-17 01:24:55', 'Reprehenderit proid', 'Quas ullam illo id e', 'Non quod officiis mi'),
+(2, 'Bethany Roach', 'bethany-roach', '2', 'images/logo_1.png', '[\"product_banner\\/qualityicon-2_2.jpg\",\"product_banner\\/qualityicon-3_2.jpg\",\"product_banner\\/qualityicon-4_2.jpg\"]', '50', '15', '<p>sdaasdsadsa</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>3582.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>42.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>772.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;12g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>31.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, 'asdsad', 1, '2025-05-14 03:58:23', '2025-05-17 03:50:19', 'Animi sunt corpori', 'Cum qui minima id e', 'Velit repudiandae au'),
+(3, 'Laith Dickerson', 'laith-dickerson', '1', 'images/Fullmetal Alchemist.jpg', '[\"product_banner\\/21615.jpg\",\"product_banner\\/21633.jpg\",\"product_banner\\/21635.jpg\"]', '882', '664', '<p>wdwdwdqedwq</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, NULL, 1, '2025-05-14 05:12:05', '2025-05-17 01:25:09', 'Minim voluptatibus a', 'Aperiam vitae veniam', 'Beatae tempora maxim');
 
 -- --------------------------------------------------------
 
@@ -913,6 +1157,88 @@ CREATE TABLE `product_category` (
 INSERT INTO `product_category` (`id`, `name`, `slug`, `description`, `seo_title`, `seo_des`, `seo_key`, `created_at`, `updated_at`) VALUES
 (1, 'Cat-1', 'cat-1', NULL, 'Pariatur Quis maior', 'Non aut expedita eni', 'Et architecto aut re', '2025-05-14 01:05:07', '2025-05-14 01:05:30'),
 (2, 'Cat-2', 'cat-2', NULL, 'Consequatur Aut lor', 'Voluptas nisi duis s', 'Corrupti non dolor', '2025-05-14 01:05:18', '2025-05-14 01:05:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `terms`
+--
+
+CREATE TABLE `terms` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `terms`
+--
+
+INSERT INTO `terms` (`id`, `image`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'images/terms-of-use-top-banner_1.jpg', '<h1>Terms of Service</h1>\r\n\r\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.</p>\r\n\r\n<h2>1. Acceptance of Terms</h2>\r\n\r\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.</p>\r\n\r\n<h2>2. Changes to Terms</h2>\r\n\r\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.</p>\r\n\r\n<h2>3. User Responsibilities</h2>\r\n\r\n<p>You are responsible for your use of our services and for any content you post.</p>\r\n\r\n<h2>4. Limitation of Liability</h2>\r\n\r\n<p>We are not liable for any damages arising from your use of our services.</p>\r\n\r\n<h3>5. Governing Law</h3>\r\n\r\n<p>These terms are governed by the laws of [Your Country].</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!</li>\r\n</ul>\r\n\r\n<p>Lorem ipsum dolor sit amet.</p>\r\n\r\n<ol>\r\n	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?</li>\r\n</ol>', '2025-05-19 00:18:40', '2025-05-19 00:18:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonials`
+--
+
+CREATE TABLE `testimonials` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `star` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `image`, `name`, `role`, `star`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'images/photo-1633332755192-727a05c4013d.jpeg', 'Keefe Logan', 'Ullamco sit vel iru', '2', 'Vero expedita error', '2025-05-17 03:20:48', '2025-05-17 03:20:48'),
+(2, 'images/photo-1633332755192-727a05c4013d_1.jpeg', 'MacKenzie Knight', 'Obcaecati qui quo ve', '4', 'Ipsum in aut distinc', '2025-05-17 03:24:01', '2025-05-17 03:24:01'),
+(3, 'images/photo-1633332755192-727a05c4013d_2.jpeg', 'Maggie Stanley', 'Sed sequi non beatae', '3.5', 'Reiciendis rem volup', '2025-05-17 03:24:15', '2025-05-17 03:24:15'),
+(4, 'images/photo-1633332755192-727a05c4013d_3.jpeg', 'Zahir Kline', 'Et sit voluptas sus', '3', 'Accusamus autem amet', '2025-05-17 03:24:28', '2025-05-17 03:24:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `title`
+--
+
+CREATE TABLE `title` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `seo_title_home` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des_home` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key_home` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title_product` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des_product` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key_product` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des_contact` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key_contact` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title_terms` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des_terms` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key_terms` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `seo_title_privacy` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des_privacy` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key_privacy` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `title`
+--
+
+INSERT INTO `title` (`id`, `seo_title_home`, `seo_des_home`, `seo_key_home`, `seo_title_product`, `seo_des_product`, `seo_key_product`, `seo_title_contact`, `seo_des_contact`, `seo_key_contact`, `seo_title_terms`, `seo_des_terms`, `seo_key_terms`, `created_at`, `updated_at`, `seo_title_privacy`, `seo_des_privacy`, `seo_key_privacy`) VALUES
+(1, 'home title', 'home des', 'home key', 'product title', 'product des', 'product key', 'contact title', 'contact des', 'contact key', 'terms title', 'terms des', 'terms key', '2025-05-17 00:31:42', '2025-05-17 01:56:47', 'privacy title', 'privacy des', 'privacy key');
 
 -- --------------------------------------------------------
 
@@ -996,11 +1322,23 @@ ALTER TABLE `admin_user_permissions`
   ADD KEY `admin_user_permissions_user_id_permission_id_index` (`user_id`,`permission_id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `homebanner`
+--
+ALTER TABLE `homebanner`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -1023,6 +1361,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `privacy`
+--
+ALTER TABLE `privacy`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -1032,6 +1376,24 @@ ALTER TABLE `product`
 -- Indexes for table `product_category`
 --
 ALTER TABLE `product_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `terms`
+--
+ALTER TABLE `terms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `title`
+--
+ALTER TABLE `title`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1049,13 +1411,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin_menu`
 --
 ALTER TABLE `admin_menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `admin_operation_log`
 --
 ALTER TABLE `admin_operation_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=549;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=703;
 
 --
 -- AUTO_INCREMENT for table `admin_permissions`
@@ -1076,22 +1438,40 @@ ALTER TABLE `admin_users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `homebanner`
+--
+ALTER TABLE `homebanner`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `privacy`
+--
+ALTER TABLE `privacy`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -1104,6 +1484,24 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `terms`
+--
+ALTER TABLE `terms`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `title`
+--
+ALTER TABLE `title`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
