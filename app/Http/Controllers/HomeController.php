@@ -9,6 +9,8 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Testimonial;
 use App\Models\Homebanner;
+use App\Models\Terms;
+use App\Models\Privacy;
 class HomeController extends Controller
 {
     public function index()
@@ -32,7 +34,8 @@ class HomeController extends Controller
         $seo_data['seo_description'] = $homepage->seo_des_privacy;;
         $seo_data['keywords'] = $homepage->seo_key_privacy;
         $canocial ='https://shyamafoods.com/privacy-policy';
-        return view('privacy',compact('seo_data','canocial'));
+        $privacy = Privacy::first();
+        return view('privacy',compact('seo_data','canocial','privacy'));
     }
 
     public function terms()
@@ -42,7 +45,8 @@ class HomeController extends Controller
         $seo_data['seo_description'] = $homepage->seo_des_terms;;
         $seo_data['keywords'] = $homepage->seo_key_terms;
         $canocial ='https://shyamafoods.com/terms';
-        return view('terms',compact('seo_data','canocial'));
+        $terms = Terms::first();
+        return view('terms',compact('seo_data','canocial','terms'));
     }
     public function contactUs()
     {

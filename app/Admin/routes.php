@@ -18,5 +18,7 @@ Route::group([
     $router->resource('contacts', ContactController::class);
     $router->resource('testimonials', TestimonialController::class);
     $router->resource('homebanners', HomeBannerController::class);
+    $router->resource('privacies', PrivacyController::class);
+    $router->resource('terms', TermsController::class);
 
 });

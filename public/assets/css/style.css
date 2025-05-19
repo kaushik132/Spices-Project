@@ -800,6 +800,37 @@ h1, h2, h3, h4, h5, h6{
   padding-bottom: 40px;
   position: relative;
 }
+
+/* =======================Terms ========================== */
+.terms-content-container h1, .terms-content-container h2, .terms-content-container h3, .terms-content-container h4, .terms-content-container h5, .terms-content-container h6{
+  font-weight:600;
+    margin-top: 15px;
+}
+.terms-content-container h1{
+  font-size: 30px;
+}
+.terms-content-container h2{
+  font-size: 28px;
+}
+.terms-content-container h3{
+  font-size: 25px;
+}
+.terms-content-container h4{
+  font-size: 23px;
+}
+.terms-content-container h5{
+  font-size: 20px;
+}
+.terms-content-container h6{
+  font-size: 18px;
+}
+.terms-content-container p, .terms-content-container li{
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
+  color:#291904;
+  text-align: justify;
+}
  @media only screen and (max-width:1023.99px){
   .hero-section-details {
     margin-top: 20px;
@@ -858,3 +889,4 @@ h1, h2, h3, h4, h5, h6{
   height:90px;
 }
  }
+
