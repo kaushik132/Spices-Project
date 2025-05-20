@@ -22,7 +22,7 @@
           
           
           <meta property="og:title" content="{{$seo_data['seo_title']}}">
-    <meta property="og:site_name" content="Codepin">
+    <meta property="og:site_name" content="Shyama Foods">
 
     @if(isset($canocial))
     <meta property="og:url" content="{{$canocial}}">
@@ -30,7 +30,7 @@
 
     <meta property="og:description" content="{{$seo_data['seo_description']}}">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="{{url('uploads/'.$seo_data['og_image'])}}">
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{url('assets/css/swiper-bundle.min.css')}}" />
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}" />

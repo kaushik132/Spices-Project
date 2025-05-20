@@ -114,6 +114,7 @@ class ProductController extends AdminController
             $form->text('seo_title', __('Seo Title'));
             $form->textarea('seo_des', __('Seo Description'));
             $form->textarea('seo_key', __('Seo Keywords'));
+            $form->image('seo_image', __('Seo Image'));
            
         });
 

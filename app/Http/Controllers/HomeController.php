@@ -11,6 +11,10 @@ use App\Models\Testimonial;
 use App\Models\Homebanner;
 use App\Models\Terms;
 use App\Models\Privacy;
+use App\Models\Refund;
+use App\Models\About;
+use App\Models\Poster;
+use App\Models\CompanyInfo;
 class HomeController extends Controller
 {
     public function index()
@@ -19,11 +23,14 @@ class HomeController extends Controller
         $seo_data['seo_title'] = $homepage->seo_title_home;
         $seo_data['seo_description'] = $homepage->seo_des_home;
         $seo_data['keywords'] = $homepage->seo_key_home;
+        $seo_data['og_image'] = $homepage->seo_image_privacy;
         $canocial ='https://shyamafoods.com/';
         $productCat = Product::latest()->get();
         $testimonal = Testimonial::latest()->get();
         $banner = Homebanner::latest()->get();
-        return view('home',compact('productCat','seo_data','canocial','testimonal','banner'));
+        $about = About::first();
+        $poster = Poster::latest()->get();
+        return view('home',compact('productCat','seo_data','canocial','testimonal','banner','about','poster'));
     }
    
   
@@ -33,6 +40,7 @@ class HomeController extends Controller
         $seo_data['seo_title'] = $homepage->seo_title_privacy;
         $seo_data['seo_description'] = $homepage->seo_des_privacy;;
         $seo_data['keywords'] = $homepage->seo_key_privacy;
+          $seo_data['og_image'] = $homepage->seo_image_privacy;
         $canocial ='https://shyamafoods.com/privacy-policy';
         $privacy = Privacy::first();
         return view('privacy',compact('seo_data','canocial','privacy'));
@@ -44,9 +52,22 @@ class HomeController extends Controller
         $seo_data['seo_title'] = $homepage->seo_title_terms;
         $seo_data['seo_description'] = $homepage->seo_des_terms;;
         $seo_data['keywords'] = $homepage->seo_key_terms;
+            $seo_data['og_image'] = $homepage->seo_image_terms;
         $canocial ='https://shyamafoods.com/terms';
         $terms = Terms::first();
         return view('terms',compact('seo_data','canocial','terms'));
+    }
+
+    public function refund()
+    {
+        $homepage = Title::first();
+        $seo_data['seo_title'] = $homepage->seo_title_refund;
+        $seo_data['seo_description'] = $homepage->seo_des_refund;;
+        $seo_data['keywords'] = $homepage->seo_key_refund;
+            $seo_data['og_image'] = $homepage->seo_image_refund;
+        $canocial ='https://shyamafoods.com/refund-policy';
+        $refund = Refund::first();
+        return view('refund',compact('seo_data','canocial','refund'));
     }
     public function contactUs()
     {
@@ -54,8 +75,10 @@ class HomeController extends Controller
         $seo_data['seo_title'] = $homepage->seo_title_contact;
         $seo_data['seo_description'] = $homepage->seo_des_contact;;
         $seo_data['keywords'] = $homepage->seo_key_contact;
+            $seo_data['og_image'] = $homepage->seo_image_contact;
         $canocial ='https://shyamafoods.com/contact-us';
-        return view('contact_us',compact('seo_data','canocial'));
+        $companyInfo = CompanyInfo::first();
+        return view('contact_us',compact('seo_data','canocial','companyInfo'));
     }
 
      public function contactUsPost(Request $request)    
@@ -107,13 +130,14 @@ $contact_obj->save();
 
         $productCat = ProductCategory::all();
  
-   $homepage = Title::select('seo_title_product','seo_des_product','seo_key_product')->first();
+   $homepage = Title::select('seo_title_product','seo_des_product','seo_key_product','seo_image_product')->first();
       if($slug!=null){
             $productCategory = ProductCategory::where('slug',$slug)->first();
             $productList = Product::latest()->with('productCategory')->where('product_id',$productCategory->id)->paginate(8);
              $seo_data['seo_title'] =$productCategory->seo_title;
             $seo_data['seo_description'] =$productCategory->seo_des;
            $seo_data['keywords'] =$productCategory->seo_key;
+           $seo_data['og_image'] =$productCategory->seo_image;
            $canocial ='https://shyamafoods.com/products/'.$slug;
         
 
@@ -124,6 +148,7 @@ $contact_obj->save();
             $seo_data['seo_title'] =$homepage->seo_title_product;
             $seo_data['seo_description'] =$homepage->seo_des_product;
             $seo_data['keywords'] =$homepage->seo_key_product;
+            $seo_data['og_image'] = $homepage->seo_image_product;
             $canocial ='https://shyamafoods.com/products';
           
          
@@ -143,6 +168,7 @@ $contact_obj->save();
     $seo_data['seo_title'] =$productData->seo_title;
         $seo_data['seo_description'] =$productData->seo_des;
        $seo_data['keywords'] =$productData->seo_key;
+         $seo_data['og_image'] =$productData->seo_image;
        $canocial ='https://shyamafoods.com/product-details/'.$slug;
 
     return view('product_details', compact('productData', 'product', 'productDescriptions', 'seo_data','canocial'));

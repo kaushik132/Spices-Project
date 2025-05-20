@@ -20,5 +20,9 @@ Route::group([
     $router->resource('homebanners', HomeBannerController::class);
     $router->resource('privacies', PrivacyController::class);
     $router->resource('terms', TermsController::class);
+    $router->resource('refunds', RefundController::class);
+    $router->resource('abouts', AboutController::class);
+    $router->resource('posters', PosterController::class);
+    $router->resource('company-infos', CompanyInfoController::class);
 
 });

@@ -86,18 +86,33 @@ class TitleController extends AdminController
         $form->text('seo_title_home', __('Seo title home'));
         $form->textarea('seo_des_home', __('Seo des home'));
         $form->textarea('seo_key_home', __('Seo key home'));
+        $form->image('seo_image_home', __('Seo Image home'));
+
         $form->text('seo_title_product', __('Seo title product'));
         $form->textarea('seo_des_product', __('Seo des product'));
         $form->textarea('seo_key_product', __('Seo key product'));
+        $form->image('seo_image_product', __('Seo Image Product'));
+
         $form->text('seo_title_contact', __('Seo title contact'));
         $form->textarea('seo_des_contact', __('Seo des contact'));
         $form->textarea('seo_key_contact', __('Seo key contact'));
+        $form->image('seo_image_contact', __('Seo Image Contact'));
+
         $form->text('seo_title_terms', __('Seo title terms'));
         $form->textarea('seo_des_terms', __('Seo des terms'));
         $form->textarea('seo_key_terms', __('Seo key terms'));
+        $form->image('seo_image_terms', __('Seo Image terms'));
+
+
         $form->text('seo_title_privacy', __('Seo title Privacy'));
         $form->textarea('seo_des_privacy', __('Seo des Privacy'));
         $form->textarea('seo_key_privacy', __('Seo key Privacy'));
+                $form->image('seo_image_privacy', __('Seo Image privacy'));
+
+        $form->text('seo_title_refund', __('Seo title Refund'));
+        $form->textarea('seo_des_refund', __('Seo des Refund'));
+        $form->textarea('seo_key_refund', __('Seo key Refund'));
+                $form->image('seo_image_refund', __('Seo Image Refund'));
 
         return $form;
     }

@@ -6,16 +6,16 @@ use OpenAdmin\Admin\Controllers\AdminController;
 use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
-use \App\Models\ProductCategory;
+use \App\Models\About;
 
-class ProductCategoryController extends AdminController
+class AboutController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = 'ProductCategory';
+    protected $title = 'About';
 
     /**
      * Make a grid builder.
@@ -24,9 +24,10 @@ class ProductCategoryController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new ProductCategory());
+        $grid = new Grid(new About());
 
         $grid->column('id', __('Id'));
+        $grid->column('image', __('Image'))->image(url('/uploads/'), 100, 150);;
         $grid->column('name', __('Name'));
  
 
@@ -41,15 +42,12 @@ class ProductCategoryController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(ProductCategory::findOrFail($id));
+        $show = new Show(About::findOrFail($id));
 
         $show->field('id', __('Id'));
+        $show->field('image', __('Image'));
         $show->field('name', __('Name'));
-        $show->field('slug', __('Slug'));
         $show->field('description', __('Description'));
-        $show->field('seo_title', __('Seo title'));
-        $show->field('seo_des', __('Seo des'));
-        $show->field('seo_key', __('Seo key'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -63,21 +61,11 @@ class ProductCategoryController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new ProductCategory());
+        $form = new Form(new About());
 
+        $form->image('image', __('Image'));
         $form->text('name', __('Name'));
-     $form->hidden('slug');
-
-        $form->saving(function (Form $form) {
-
-           $form->slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-',trim($form->name)));
-        });
-
-        // $form->textarea('description', __('Description'));
-        $form->text('seo_title', __('Seo title'));
-        $form->textarea('seo_des', __('Seo des'));
-        $form->textarea('seo_key', __('Seo key'));
-        $form->image('seo_image', __('Seo Image'));
+        $form->ckeditor('description', __('Description'));
 
         return $form;
     }

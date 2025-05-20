@@ -1,6 +1,14 @@
 @extends('layouts.dashboard.main')
 @section('main-containers')
 
+<style>
+.home-about-us-details p {
+    text-align: justify;
+}
+
+
+</style>
+
     <!-- ============================== Banner ======================================= -->
     <section>
         <div class="container-fluid">
@@ -128,25 +136,21 @@
             <div class="row">
                 <div class="col-md-6 mt-3">
                     <div class="high-quality-main-headings text-start">
-                        <span>Lorem, ipsum dolor.</span>
-                        <h2 class="mb-2">About Us</h2>
+                        <h2 class="mb-2">{{$about->name}}</h2>
                     </div>
-                  <div class="home-about-us-details">
-                    <div class="d-flex mt-3">
-                        <i class="bi bi-arrow-right-circle-fill fs-2"></i>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam a culpa nemo numquam temporibus, nulla, et harum dolorum doloribus voluptas odit ut cum dolore repellendus dolor? Sapiente ex iste aut ducimus modi laboriosam reiciendis laborum tenetur quod eaque reprehenderit expedita vero excepturi atque numquam necessitatibus debitis, iusto beatae. Dolores, incidunt?</p>
-                    </div>
-                      
-                    <div class="d-flex mt-3">
-                        <i class="bi bi-arrow-right-circle-fill fs-2"></i>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam a culpa nemo numquam temporibus, nulla, et harum dolorum doloribus voluptas odit ut cum dolore repellendus dolor? Sapiente ex iste aut ducimus modi laboriosam reiciendis laborum tenetur quod eaque reprehenderit expedita vero excepturi atque numquam necessitatibus debitis, iusto beatae. Dolores, incidunt?</p>
-                    </div>
-                  </div>
+  <div class="home-about-us-details">
+    <div class="d-flex align-items-start mt-3">
+        <i class="bi bi-arrow-right-circle-fill fs-2 text-warning me-3 mt-1"></i>
+        <p class="mb-0">{!! $about->description !!}</p>
+    </div>
+</div>
+
+
                 </div>
                 <div class="col-md-6 mt-3 text-center">
                     <div class="about-us-main-img-wrapper"  style="overflow-x: hidden;">
                         <img
-                          src="./assets/images/about-us-image.png"
+                          src="{{ url('uploads/' . $about->image) }}"
                           alt="about-image"
                           class="about-us-main-img"
                         />
@@ -162,23 +166,18 @@
         <div class="swiper-wrapper mb-5">
             <!-- 6 Example Slides -->
 
+            @foreach ($poster as $posters)
+                
             <div class="swiper-slide">
                 <div>
-                    <img src="https://static.vecteezy.com/system/resources/previews/041/928/900/non_2x/spices-horizontal-web-banner-chili-peppers-nutmeg-bay-leaf-black-or-red-peppercorns-cinnamon-other-aroma-ingredients-illustration-for-header-website-cover-templates-in-modern-design-vector.jpg" alt="slider" class="img-fluid">
+                    <img src="{{url('uploads/'.$posters->image)}}" alt="slider" class="img-fluid">
                  </div>
             </div>
+            @endforeach
 
-            <div class="swiper-slide">            
-     <div>
-        <img src="https://catchfoods.com/wp-content/uploads/2022/12/Single-Spices-banner-1.png" alt="slider" class="img-fluid">
-     </div>
-            </div>
+   
 
-            <div class="swiper-slide">
-                <div>
-                    <img src="https://cdn2.f-cdn.com/contestentries/80446/10903920/538992c8b99e8_thumb900.jpg" alt="slider" class="img-fluid">
-                 </div>
-            </div>
+        
         </div>
         <!-- Navigation pagination -->
         <div class="swiper-pagination"></div>

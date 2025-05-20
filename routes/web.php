@@ -20,6 +20,7 @@ route::get('/', [HomeController::class, 'index'])->name('home');
 route::get('contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
 route::get('privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 route::get('terms', [HomeController::class, 'terms'])->name('terms');
+route::get('refund-policy', [HomeController::class, 'refund'])->name('refund');
 route::post('contact-us-post', [HomeController::class, 'contactUsPost'])->name('contactUsPost');
 route::get('products/{slug?}', [HomeController::class, 'products'])->name('products');
 route::get('product-details/{slug?}', [HomeController::class, 'productDetails'])->name('productDetails');

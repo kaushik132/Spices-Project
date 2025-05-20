@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2025 at 09:25 AM
+-- Generation Time: May 20, 2025 at 12:31 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `spices`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about`
+--
+
+CREATE TABLE `about` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id`, `image`, `name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'images/about-us-image_3.png', 'About Us', '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam a culpa nemo numquam temporibus, nulla, et harum dolorum doloribus voluptas odit ut cum dolore repellendus dolor? Sapiente ex iste aut ducimus modi laboriosam reiciendis laborum tenetur quod eaque reprehenderit expedita vero excepturi atque numquam necessitatibus debitis, iusto beatae. Dolores, incidunt?</p>', '2025-05-20 00:36:30', '2025-05-20 00:49:54');
 
 -- --------------------------------------------------------
 
@@ -59,12 +81,18 @@ INSERT INTO `admin_menu` (`id`, `parent_id`, `order`, `title`, `icon`, `uri`, `p
 (13, 14, 3, 'Product-categories', 'icon-file', 'product-categories', NULL, '2025-05-14 01:02:08', '2025-05-14 01:09:05'),
 (14, 0, 2, 'Product', 'icon-ice-cream', NULL, 'ext.helpers', '2025-05-14 01:07:58', '2025-05-14 01:09:05'),
 (15, 14, 14, 'Products', 'icon-file', 'products', NULL, '2025-05-14 01:17:44', '2025-05-14 03:53:53'),
-(16, 0, 14, 'Titles', 'icon-file', 'titles', NULL, '2025-05-17 00:29:35', '2025-05-17 00:29:35'),
+(16, 0, 14, 'Seo Section', 'icon-file', 'titles', NULL, '2025-05-17 00:29:35', '2025-05-20 00:56:19'),
 (17, 0, 14, 'Contacts', 'icon-file', 'contacts', NULL, '2025-05-17 01:33:02', '2025-05-17 01:33:02'),
 (18, 0, 14, 'Testimonials', 'icon-file', 'testimonials', NULL, '2025-05-17 03:19:13', '2025-05-17 03:19:13'),
-(19, 0, 14, 'Homebanners', 'icon-file', 'homebanners', NULL, '2025-05-17 04:59:46', '2025-05-17 04:59:46'),
-(20, 0, 14, 'Privacies', 'icon-file', 'privacies', NULL, '2025-05-19 00:11:24', '2025-05-19 00:11:24'),
-(21, 0, 14, 'Terms', 'icon-file', 'terms', NULL, '2025-05-19 00:12:20', '2025-05-19 00:12:20');
+(19, 24, 14, 'Home Banners', 'icon-file', 'homebanners', NULL, '2025-05-17 04:59:46', '2025-05-20 00:35:24'),
+(20, 26, 14, 'Privacies', 'icon-file', 'privacies', NULL, '2025-05-19 00:11:24', '2025-05-20 00:55:15'),
+(21, 26, 14, 'Terms', 'icon-file', 'terms', NULL, '2025-05-19 00:12:20', '2025-05-20 00:55:22'),
+(22, 26, 14, 'Refunds', 'icon-file', 'refunds', NULL, '2025-05-20 00:16:49', '2025-05-20 00:55:28'),
+(23, 24, 14, 'Abouts', 'icon-file', 'abouts', NULL, '2025-05-20 00:33:54', '2025-05-20 00:35:33'),
+(24, 0, 0, 'Home Page Section', 'icon-home', NULL, '*', '2025-05-20 00:35:13', '2025-05-20 00:35:13'),
+(25, 24, 14, 'Posters', 'icon-file', 'posters', NULL, '2025-05-20 00:53:50', '2025-05-20 00:54:23'),
+(26, 0, 0, 'Company Policies', 'icon-passport', NULL, '*', '2025-05-20 00:55:04', '2025-05-20 00:55:04'),
+(27, 26, 14, 'Company-infos', 'icon-file', 'company-infos', NULL, '2025-05-20 01:12:24', '2025-05-20 01:13:28');
 
 -- --------------------------------------------------------
 
@@ -791,7 +819,180 @@ INSERT INTO `admin_operation_log` (`id`, `user_id`, `path`, `method`, `ip`, `inp
 (699, 1, 'admin/terms/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:17:56', '2025-05-19 00:17:56'),
 (700, 1, 'admin/terms/create', 'GET', '127.0.0.1', '[]', '2025-05-19 00:18:32', '2025-05-19 00:18:32'),
 (701, 1, 'admin/terms', 'POST', '127.0.0.1', '{\"description\":\"<h1>Terms of Service<\\/h1>\\r\\n\\r\\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.<\\/p>\\r\\n\\r\\n<h2>1. Acceptance of Terms<\\/h2>\\r\\n\\r\\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.<\\/p>\\r\\n\\r\\n<h2>2. Changes to Terms<\\/h2>\\r\\n\\r\\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.<\\/p>\\r\\n\\r\\n<h2>3. User Responsibilities<\\/h2>\\r\\n\\r\\n<p>You are responsible for your use of our services and for any content you post.<\\/p>\\r\\n\\r\\n<h2>4. Limitation of Liability<\\/h2>\\r\\n\\r\\n<p>We are not liable for any damages arising from your use of our services.<\\/p>\\r\\n\\r\\n<h3>5. Governing Law<\\/h3>\\r\\n\\r\\n<p>These terms are governed by the laws of [Your Country].<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!<\\/li>\\r\\n<\\/ul>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet.<\\/p>\\r\\n\\r\\n<ol>\\r\\n\\t<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?<\\/li>\\r\\n<\\/ol>\",\"_token\":\"fLnlrOWYDb9IVrUX0FC8EbWAoz59hL1syL1MSYMi\"}', '2025-05-19 00:18:40', '2025-05-19 00:18:40'),
-(702, 1, 'admin/terms', 'GET', '127.0.0.1', '[]', '2025-05-19 00:18:40', '2025-05-19 00:18:40');
+(702, 1, 'admin/terms', 'GET', '127.0.0.1', '[]', '2025-05-19 00:18:40', '2025-05-19 00:18:40'),
+(703, 1, 'admin', 'GET', '127.0.0.1', '[]', '2025-05-19 23:53:28', '2025-05-19 23:53:28'),
+(704, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-19 23:53:35', '2025-05-19 23:53:35'),
+(705, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-19 23:53:42', '2025-05-19 23:53:42'),
+(706, 1, 'admin/auth/menu/19/edit', 'GET', '127.0.0.1', '[]', '2025-05-19 23:53:47', '2025-05-19 23:53:47'),
+(707, 1, 'admin/auth/menu/19', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"search_terms\":null,\"title\":\"Home Banners\",\"icon\":\"icon-file\",\"uri\":\"homebanners\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-19 23:53:55', '2025-05-19 23:53:55'),
+(708, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-19 23:53:55', '2025-05-19 23:53:55'),
+(709, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-19 23:54:10', '2025-05-19 23:54:10'),
+(710, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-19 23:54:12', '2025-05-19 23:54:12'),
+(711, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-19 23:54:21', '2025-05-19 23:54:21'),
+(712, 1, 'admin/titles/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-19 23:54:24', '2025-05-19 23:54:24'),
+(713, 1, 'admin/titles/1', 'PUT', '127.0.0.1', '{\"seo_title_home\":\"home title\",\"seo_des_home\":\"home des\",\"seo_key_home\":\"home key\",\"seo_title_product\":\"product title\",\"seo_des_product\":\"product des\",\"seo_key_product\":\"product key\",\"seo_title_contact\":\"contact title\",\"seo_des_contact\":\"contact des\",\"seo_key_contact\":\"contact key\",\"seo_title_terms\":\"terms title\",\"seo_des_terms\":\"terms des\",\"seo_key_terms\":\"terms key\",\"seo_title_privacy\":\"privacy title\",\"seo_des_privacy\":\"privacy des\",\"seo_key_privacy\":\"privacy key\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-19 23:55:33', '2025-05-19 23:55:33'),
+(714, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-19 23:55:34', '2025-05-19 23:55:34'),
+(715, 1, 'admin/product-categories', 'GET', '127.0.0.1', '[]', '2025-05-20 00:03:38', '2025-05-20 00:03:38'),
+(716, 1, 'admin/product-categories/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:06:43', '2025-05-20 00:06:43'),
+(717, 1, 'admin/product-categories/1', 'PUT', '127.0.0.1', '{\"name\":\"Cat-1\",\"slug\":\"cat-1\",\"seo_title\":\"Pariatur Quis maior\",\"seo_des\":\"Non aut expedita eni\",\"seo_key\":\"Et architecto aut re\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:06:49', '2025-05-20 00:06:49'),
+(718, 1, 'admin/product-categories', 'GET', '127.0.0.1', '[]', '2025-05-20 00:06:50', '2025-05-20 00:06:50'),
+(719, 1, 'admin/product-categories/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:06:51', '2025-05-20 00:06:51'),
+(720, 1, 'admin/product-categories/2', 'PUT', '127.0.0.1', '{\"name\":\"Cat-2\",\"slug\":\"cat-2\",\"seo_title\":\"Consequatur Aut lor\",\"seo_des\":\"Voluptas nisi duis s\",\"seo_key\":\"Corrupti non dolor\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:06:59', '2025-05-20 00:06:59'),
+(721, 1, 'admin/product-categories', 'GET', '127.0.0.1', '[]', '2025-05-20 00:06:59', '2025-05-20 00:06:59'),
+(722, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-20 00:07:01', '2025-05-20 00:07:01'),
+(723, 1, 'admin/products/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:07:02', '2025-05-20 00:07:02');
+INSERT INTO `admin_operation_log` (`id`, `user_id`, `path`, `method`, `ip`, `input`, `created_at`, `updated_at`) VALUES
+(724, 1, 'admin/products/1', 'PUT', '127.0.0.1', '{\"product_id\":\"1\",\"search_terms\":null,\"product_name\":\"Reagan Farmer\",\"slug\":\"reagan-farmer\",\"descount_price\":\"780\",\"price\":\"600\",\"contant\":\"<p>Voluptatibus optio<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>358.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>4.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>77.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;1g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>3.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"whatsapp\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"instagram\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"linkedin\":\"http:\\/\\/127.0.0.1:8000\\/product-details\",\"seo_title\":\"Reprehenderit proid\",\"seo_des\":\"Quas ullam illo id e\",\"seo_key\":\"Non quod officiis mi\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:07:20', '2025-05-20 00:07:20'),
+(725, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-20 00:07:20', '2025-05-20 00:07:20'),
+(726, 1, 'admin/products/2/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:07:23', '2025-05-20 00:07:23'),
+(727, 1, 'admin/products/2', 'PUT', '127.0.0.1', '{\"product_id\":\"2\",\"search_terms\":null,\"product_name\":\"Bethany Roach\",\"slug\":\"bethany-roach\",\"descount_price\":\"50\",\"price\":\"15\",\"contant\":\"<p>sdaasdsadsa<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>3582.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>42.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>772.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;12g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>31.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":null,\"whatsapp\":null,\"instagram\":null,\"linkedin\":null,\"seo_title\":\"Animi sunt corpori\",\"seo_des\":\"Cum qui minima id e\",\"seo_key\":\"Velit repudiandae au\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:07:29', '2025-05-20 00:07:29'),
+(728, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-20 00:07:29', '2025-05-20 00:07:29'),
+(729, 1, 'admin/products/3/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:07:31', '2025-05-20 00:07:31'),
+(730, 1, 'admin/products/3', 'PUT', '127.0.0.1', '{\"product_id\":\"1\",\"search_terms\":null,\"product_name\":\"Laith Dickerson\",\"slug\":\"laith-dickerson\",\"descount_price\":\"882\",\"price\":\"664\",\"contant\":\"<p>wdwdwdqedwq<\\/p>\",\"description\":\"<table>\\r\\n\\t<tbody>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Energy<\\/th>\\r\\n\\t\\t\\t<td>358.4kcal<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Protein<\\/th>\\r\\n\\t\\t\\t<td>4.16g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Carbohydrate<\\/th>\\r\\n\\t\\t\\t<td>77.34g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Sugar<\\/th>\\r\\n\\t\\t\\t<td>&lt;1g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Fat<\\/th>\\r\\n\\t\\t\\t<td>3.6g<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<th>Ingredients<\\/th>\\r\\n\\t\\t\\t<td>Turmeric Whole<\\/td>\\r\\n\\t\\t<\\/tr>\\r\\n\\t<\\/tbody>\\r\\n<\\/table>\",\"status\":\"1\",\"facebook\":null,\"whatsapp\":null,\"instagram\":null,\"linkedin\":null,\"seo_title\":\"Minim voluptatibus a\",\"seo_des\":\"Aperiam vitae veniam\",\"seo_key\":\"Beatae tempora maxim\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:07:39', '2025-05-20 00:07:39'),
+(731, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-20 00:07:40', '2025-05-20 00:07:40'),
+(732, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-20 00:10:12', '2025-05-20 00:10:12'),
+(733, 1, 'admin/titles/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:10:15', '2025-05-20 00:10:15'),
+(734, 1, 'admin/titles/1', 'PUT', '127.0.0.1', '{\"seo_title_home\":\"home title\",\"seo_des_home\":\"home des\",\"seo_key_home\":\"home key\",\"seo_title_product\":\"product title\",\"seo_des_product\":\"product des\",\"seo_key_product\":\"product key\",\"seo_image_product_file_del_\":\"images\\/Fullmetal Alchemist (2).jpg,\",\"seo_title_contact\":\"contact title\",\"seo_des_contact\":\"contact des\",\"seo_key_contact\":\"contact key\",\"seo_title_terms\":\"terms title\",\"seo_des_terms\":\"terms des\",\"seo_key_terms\":\"terms key\",\"seo_title_privacy\":\"privacy title\",\"seo_des_privacy\":\"privacy des\",\"seo_key_privacy\":\"privacy key\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:10:57', '2025-05-20 00:10:57'),
+(735, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-20 00:10:57', '2025-05-20 00:10:57'),
+(736, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-20 00:13:29', '2025-05-20 00:13:29'),
+(737, 1, 'admin/titles/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:13:32', '2025-05-20 00:13:32'),
+(738, 1, 'admin/titles/1', 'PUT', '127.0.0.1', '{\"seo_title_home\":\"home title\",\"seo_des_home\":\"home des\",\"seo_key_home\":\"home key\",\"seo_title_product\":\"product title\",\"seo_des_product\":\"product des\",\"seo_key_product\":\"product key\",\"seo_title_contact\":\"contact title\",\"seo_des_contact\":\"contact des\",\"seo_key_contact\":\"contact key\",\"seo_title_terms\":\"terms title\",\"seo_des_terms\":\"terms des\",\"seo_key_terms\":\"terms key\",\"seo_title_privacy\":\"privacy title\",\"seo_des_privacy\":\"privacy des\",\"seo_key_privacy\":\"privacy key\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:13:41', '2025-05-20 00:13:41'),
+(739, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-20 00:13:41', '2025-05-20 00:13:41'),
+(740, 1, 'admin/titles/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:13:52', '2025-05-20 00:13:52'),
+(741, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:16:03', '2025-05-20 00:16:03'),
+(742, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"refund\",\"model_name\":\"App\\\\Models\\\\Refund\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\RefundController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"description\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:16:47', '2025-05-20 00:16:47'),
+(743, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:16:51', '2025-05-20 00:16:51'),
+(744, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:17:01', '2025-05-20 00:17:01'),
+(745, 1, 'admin/refunds', 'GET', '127.0.0.1', '[]', '2025-05-20 00:17:03', '2025-05-20 00:17:03'),
+(746, 1, 'admin/refunds/create', 'GET', '127.0.0.1', '[]', '2025-05-20 00:17:05', '2025-05-20 00:17:05'),
+(747, 1, 'admin/terms', 'GET', '127.0.0.1', '[]', '2025-05-20 00:18:47', '2025-05-20 00:18:47'),
+(748, 1, 'admin/terms/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:18:48', '2025-05-20 00:18:48'),
+(749, 1, 'admin/refunds', 'GET', '127.0.0.1', '[]', '2025-05-20 00:19:16', '2025-05-20 00:19:16'),
+(750, 1, 'admin/refunds/create', 'GET', '127.0.0.1', '[]', '2025-05-20 00:19:18', '2025-05-20 00:19:18'),
+(751, 1, 'admin/refunds', 'POST', '127.0.0.1', '{\"description\":\"<h1>Refund Policy<\\/h1>\\r\\n\\r\\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.<\\/p>\\r\\n\\r\\n<h2>1. Acceptance of Terms<\\/h2>\\r\\n\\r\\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.<\\/p>\\r\\n\\r\\n<h2>2. Changes to Terms<\\/h2>\\r\\n\\r\\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.<\\/p>\\r\\n\\r\\n<h2>3. User Responsibilities<\\/h2>\\r\\n\\r\\n<p>You are responsible for your use of our services and for any content you post.<\\/p>\\r\\n\\r\\n<h2>4. Limitation of Liability<\\/h2>\\r\\n\\r\\n<p>We are not liable for any damages arising from your use of our services.<\\/p>\\r\\n\\r\\n<h3>5. Governing Law<\\/h3>\\r\\n\\r\\n<p>These terms are governed by the laws of [Your Country].<\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!<\\/li>\\r\\n<\\/ul>\\r\\n\\r\\n<p>Lorem ipsum dolor sit amet.<\\/p>\\r\\n\\r\\n<ol>\\r\\n\\t<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?<\\/li>\\r\\n<\\/ol>\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:19:45', '2025-05-20 00:19:45'),
+(752, 1, 'admin/refunds', 'GET', '127.0.0.1', '[]', '2025-05-20 00:19:45', '2025-05-20 00:19:45'),
+(753, 1, 'admin/terms', 'GET', '127.0.0.1', '[]', '2025-05-20 00:23:42', '2025-05-20 00:23:42'),
+(754, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-20 00:23:44', '2025-05-20 00:23:44'),
+(755, 1, 'admin/titles/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:23:46', '2025-05-20 00:23:46'),
+(756, 1, 'admin/titles/1', 'PUT', '127.0.0.1', '{\"seo_title_home\":\"home title\",\"seo_des_home\":\"home des\",\"seo_key_home\":\"home key\",\"seo_title_product\":\"product title\",\"seo_des_product\":\"product des\",\"seo_key_product\":\"product key\",\"seo_title_contact\":\"contact title\",\"seo_des_contact\":\"contact des\",\"seo_key_contact\":\"contact key\",\"seo_title_terms\":\"terms title\",\"seo_des_terms\":\"terms des\",\"seo_key_terms\":\"terms key\",\"seo_title_privacy\":\"privacy title\",\"seo_des_privacy\":\"privacy des\",\"seo_key_privacy\":\"privacy key\",\"seo_title_refund\":\"refund title\",\"seo_des_refund\":\"refund description\",\"seo_key_refund\":\"refund key\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:23:53', '2025-05-20 00:23:53'),
+(757, 1, 'admin/titles', 'GET', '127.0.0.1', '[]', '2025-05-20 00:23:54', '2025-05-20 00:23:54'),
+(758, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:33:01', '2025-05-20 00:33:01'),
+(759, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"about\",\"model_name\":\"App\\\\Models\\\\About\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\AboutController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":{\"2\":{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},\"0\":{\"name\":\"name\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},\"1\":{\"name\":\"description\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}},\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:33:54', '2025-05-20 00:33:54'),
+(760, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:33:55', '2025-05-20 00:33:55'),
+(761, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:34:28', '2025-05-20 00:34:28'),
+(762, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:34:33', '2025-05-20 00:34:33'),
+(763, 1, 'admin/auth/menu/19/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:34:38', '2025-05-20 00:34:38'),
+(764, 1, 'admin/auth/users', 'GET', '127.0.0.1', '[]', '2025-05-20 00:34:42', '2025-05-20 00:34:42'),
+(765, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:34:44', '2025-05-20 00:34:44'),
+(766, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"search_terms\":null,\"title\":\"Home Page Section\",\"icon\":\"icon-home\",\"uri\":null,\"roles\":[\"1\",null],\"permission\":\"*\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:35:13', '2025-05-20 00:35:13'),
+(767, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:13', '2025-05-20 00:35:13'),
+(768, 1, 'admin/auth/menu/19/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:19', '2025-05-20 00:35:19'),
+(769, 1, 'admin/auth/menu/19', 'PUT', '127.0.0.1', '{\"parent_id\":\"24\",\"search_terms\":null,\"title\":\"Home Banners\",\"icon\":\"icon-file\",\"uri\":\"homebanners\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:35:24', '2025-05-20 00:35:24'),
+(770, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:25', '2025-05-20 00:35:25'),
+(771, 1, 'admin/auth/menu/23/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:28', '2025-05-20 00:35:28'),
+(772, 1, 'admin/auth/menu/23', 'PUT', '127.0.0.1', '{\"parent_id\":\"24\",\"search_terms\":null,\"title\":\"Abouts\",\"icon\":\"icon-file\",\"uri\":\"abouts\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:35:33', '2025-05-20 00:35:33'),
+(773, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:33', '2025-05-20 00:35:33'),
+(774, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:35', '2025-05-20 00:35:35'),
+(775, 1, 'admin/homebanners', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:41', '2025-05-20 00:35:41'),
+(776, 1, 'admin/abouts', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:42', '2025-05-20 00:35:42'),
+(777, 1, 'admin/abouts/create', 'GET', '127.0.0.1', '[]', '2025-05-20 00:35:44', '2025-05-20 00:35:44'),
+(778, 1, 'admin/abouts', 'POST', '127.0.0.1', '{\"name\":\"About Us\",\"description\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:36:30', '2025-05-20 00:36:30'),
+(779, 1, 'admin/abouts', 'GET', '127.0.0.1', '[]', '2025-05-20 00:36:30', '2025-05-20 00:36:30'),
+(780, 1, 'admin/abouts/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:36:33', '2025-05-20 00:36:33'),
+(781, 1, 'admin/abouts/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:37:24', '2025-05-20 00:37:24'),
+(782, 1, 'admin/abouts/1', 'PUT', '127.0.0.1', '{\"name\":\"About Us\",\"description\":\"<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam a culpa nemo numquam temporibus, nulla, et harum dolorum doloribus voluptas odit ut cum dolore repellendus dolor? Sapiente ex iste aut ducimus modi laboriosam reiciendis laborum tenetur quod eaque reprehenderit expedita vero excepturi atque numquam necessitatibus debitis, iusto beatae. Dolores, incidunt?<\\/p>\\r\\n\\r\\n<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam a culpa nemo numquam temporibus, nulla, et harum dolorum doloribus voluptas odit ut cum dolore repellendus dolor? Sapiente ex iste aut ducimus modi laboriosam reiciendis laborum tenetur quod eaque reprehenderit expedita vero excepturi atque numquam necessitatibus debitis, iusto beatae. Dolores, incidunt?<\\/p>\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:37:36', '2025-05-20 00:37:36'),
+(783, 1, 'admin/abouts', 'GET', '127.0.0.1', '[]', '2025-05-20 00:37:36', '2025-05-20 00:37:36'),
+(784, 1, 'admin/abouts/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:37:39', '2025-05-20 00:37:39'),
+(785, 1, 'admin/abouts/1', 'PUT', '127.0.0.1', '{\"name\":\"About Us\",\"description\":\"<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam a culpa nemo numquam temporibus, nulla, et harum dolorum doloribus voluptas odit ut cum dolore repellendus dolor? Sapiente ex iste aut ducimus modi laboriosam reiciendis laborum tenetur quod eaque reprehenderit expedita vero excepturi atque numquam necessitatibus debitis, iusto beatae. Dolores, incidunt?<\\/p>\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:49:54', '2025-05-20 00:49:54'),
+(786, 1, 'admin/abouts', 'GET', '127.0.0.1', '[]', '2025-05-20 00:49:55', '2025-05-20 00:49:55'),
+(787, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:50:47', '2025-05-20 00:50:47'),
+(788, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"poster\",\"model_name\":\"App\\\\Models\\\\Poster\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\PosterController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"image\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:53:50', '2025-05-20 00:53:50'),
+(789, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:53:50', '2025-05-20 00:53:50'),
+(790, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 00:54:11', '2025-05-20 00:54:11'),
+(791, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:54:15', '2025-05-20 00:54:15'),
+(792, 1, 'admin/auth/menu/25/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:54:19', '2025-05-20 00:54:19'),
+(793, 1, 'admin/auth/menu/25', 'PUT', '127.0.0.1', '{\"parent_id\":\"24\",\"search_terms\":null,\"title\":\"Posters\",\"icon\":\"icon-file\",\"uri\":\"posters\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:54:23', '2025-05-20 00:54:23'),
+(794, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:54:23', '2025-05-20 00:54:23'),
+(795, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:54:25', '2025-05-20 00:54:25'),
+(796, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"search_terms\":null,\"title\":\"Company Policies\",\"icon\":\"icon-passport\",\"uri\":null,\"roles\":[\"1\",null],\"permission\":\"*\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:55:04', '2025-05-20 00:55:04'),
+(797, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:05', '2025-05-20 00:55:05'),
+(798, 1, 'admin/auth/menu/20/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:09', '2025-05-20 00:55:09'),
+(799, 1, 'admin/auth/menu/20', 'PUT', '127.0.0.1', '{\"parent_id\":\"26\",\"search_terms\":null,\"title\":\"Privacies\",\"icon\":\"icon-file\",\"uri\":\"privacies\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:55:14', '2025-05-20 00:55:14'),
+(800, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:15', '2025-05-20 00:55:15'),
+(801, 1, 'admin/auth/menu/21/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:17', '2025-05-20 00:55:17'),
+(802, 1, 'admin/auth/menu/21', 'PUT', '127.0.0.1', '{\"parent_id\":\"26\",\"search_terms\":null,\"title\":\"Terms\",\"icon\":\"icon-file\",\"uri\":\"terms\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:55:22', '2025-05-20 00:55:22'),
+(803, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:22', '2025-05-20 00:55:22'),
+(804, 1, 'admin/auth/menu/22/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:24', '2025-05-20 00:55:24'),
+(805, 1, 'admin/auth/menu/22', 'PUT', '127.0.0.1', '{\"parent_id\":\"26\",\"search_terms\":null,\"title\":\"Refunds\",\"icon\":\"icon-file\",\"uri\":\"refunds\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:55:28', '2025-05-20 00:55:28'),
+(806, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:28', '2025-05-20 00:55:28'),
+(807, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:30', '2025-05-20 00:55:30'),
+(808, 1, 'admin/auth/menu/16/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 00:55:59', '2025-05-20 00:55:59'),
+(809, 1, 'admin/auth/menu/16', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"search_terms\":null,\"title\":\"Seo Section\",\"icon\":\"icon-file\",\"uri\":\"titles\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 00:56:19', '2025-05-20 00:56:19'),
+(810, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:56:20', '2025-05-20 00:56:20'),
+(811, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 00:56:23', '2025-05-20 00:56:23'),
+(812, 1, 'admin/contacts', 'GET', '127.0.0.1', '[]', '2025-05-20 00:56:27', '2025-05-20 00:56:27'),
+(813, 1, 'admin/testimonials', 'GET', '127.0.0.1', '[]', '2025-05-20 00:56:29', '2025-05-20 00:56:29'),
+(814, 1, 'admin/contacts', 'GET', '127.0.0.1', '[]', '2025-05-20 00:56:30', '2025-05-20 00:56:30'),
+(815, 1, 'admin/posters', 'GET', '127.0.0.1', '[]', '2025-05-20 00:58:48', '2025-05-20 00:58:48'),
+(816, 1, 'admin/posters/create', 'GET', '127.0.0.1', '[]', '2025-05-20 00:58:50', '2025-05-20 00:58:50'),
+(817, 1, 'admin/posters', 'POST', '127.0.0.1', '{\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:58:57', '2025-05-20 00:58:57'),
+(818, 1, 'admin/posters', 'GET', '127.0.0.1', '[]', '2025-05-20 00:58:57', '2025-05-20 00:58:57'),
+(819, 1, 'admin/posters/create', 'GET', '127.0.0.1', '[]', '2025-05-20 00:58:59', '2025-05-20 00:58:59'),
+(820, 1, 'admin/posters', 'POST', '127.0.0.1', '{\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:59:04', '2025-05-20 00:59:04'),
+(821, 1, 'admin/posters', 'GET', '127.0.0.1', '[]', '2025-05-20 00:59:04', '2025-05-20 00:59:04'),
+(822, 1, 'admin/posters/create', 'GET', '127.0.0.1', '[]', '2025-05-20 00:59:06', '2025-05-20 00:59:06'),
+(823, 1, 'admin/posters', 'POST', '127.0.0.1', '{\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:59:10', '2025-05-20 00:59:10'),
+(824, 1, 'admin/posters', 'GET', '127.0.0.1', '[]', '2025-05-20 00:59:11', '2025-05-20 00:59:11'),
+(825, 1, 'admin/posters/create', 'GET', '127.0.0.1', '[]', '2025-05-20 00:59:12', '2025-05-20 00:59:12'),
+(826, 1, 'admin/posters', 'POST', '127.0.0.1', '{\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 00:59:18', '2025-05-20 00:59:18'),
+(827, 1, 'admin/posters', 'GET', '127.0.0.1', '[]', '2025-05-20 00:59:18', '2025-05-20 00:59:18'),
+(828, 1, 'admin/posters', 'GET', '127.0.0.1', '[]', '2025-05-20 00:59:30', '2025-05-20 00:59:30'),
+(829, 1, 'admin/posters', 'GET', '127.0.0.1', '[]', '2025-05-20 00:59:37', '2025-05-20 00:59:37'),
+(830, 1, 'admin/contacts', 'GET', '127.0.0.1', '[]', '2025-05-20 01:02:04', '2025-05-20 01:02:04'),
+(831, 1, 'admin/products', 'GET', '127.0.0.1', '[]', '2025-05-20 01:08:08', '2025-05-20 01:08:08'),
+(832, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 01:08:14', '2025-05-20 01:08:14'),
+(833, 1, 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"company\",\"model_name\":\"App\\\\Models\\\\CompanyInfo\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\CompanyInfoController\",\"create\":[\"migration\",\"model\",\"controller\",\"migrate\",\"menu_item\"],\"fields\":[{\"name\":\"address\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"phone_number\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"email\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"facbook_link\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"whatsapp_link\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"instagram_link\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"youtube_link\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":\"map_link\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null},{\"name\":null,\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":null}],\"timestamps\":\"on\",\"primary_key\":\"id\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 01:12:24', '2025-05-20 01:12:24'),
+(834, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 01:12:24', '2025-05-20 01:12:24'),
+(835, 1, 'admin/contacts', 'GET', '127.0.0.1', '[]', '2025-05-20 01:12:46', '2025-05-20 01:12:46'),
+(836, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 01:12:53', '2025-05-20 01:12:53'),
+(837, 1, 'admin/auth/menu/27/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:12:56', '2025-05-20 01:12:56'),
+(838, 1, 'admin/auth/menu/27', 'PUT', '127.0.0.1', '{\"parent_id\":\"26\",\"search_terms\":null,\"title\":\"Company-infos\",\"icon\":\"icon-file\",\"uri\":\"company-infos\",\"roles\":[null],\"permission\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:13:28', '2025-05-20 01:13:28'),
+(839, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 01:13:28', '2025-05-20 01:13:28'),
+(840, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2025-05-20 01:13:31', '2025-05-20 01:13:31'),
+(841, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:13:34', '2025-05-20 01:13:34'),
+(842, 1, 'admin/company-infos/create', 'GET', '127.0.0.1', '[]', '2025-05-20 01:13:37', '2025-05-20 01:13:37'),
+(843, 1, 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2025-05-20 01:13:57', '2025-05-20 01:13:57'),
+(844, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:14:00', '2025-05-20 01:14:00'),
+(845, 1, 'admin/company-infos/create', 'GET', '127.0.0.1', '[]', '2025-05-20 01:14:02', '2025-05-20 01:14:02'),
+(846, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:14:05', '2025-05-20 01:14:05'),
+(847, 1, 'admin/company-infos', 'POST', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":null,\"whatsapp_link\":null,\"instagram_link\":null,\"youtube_link\":null,\"map_link\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\"}', '2025-05-20 01:14:33', '2025-05-20 01:14:33'),
+(848, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:14:34', '2025-05-20 01:14:34'),
+(849, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:15:14', '2025-05-20 01:15:14'),
+(850, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:15:16', '2025-05-20 01:15:16'),
+(851, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":null,\"whatsapp_link\":null,\"instagram_link\":null,\"youtube_link\":null,\"map_link\":\"https:\\/\\/www.google.com\\/maps?ll=26.928411,75.813642&z=13&t=m&hl=en&gl=IN&mapclient=embed&saddr=Kagdiwara,+Brahampuri,+Jaipur,+Rajasthan+302002&daddr=Jaipur,+Rajasthan&dirflg=d\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:15:38', '2025-05-20 01:15:38'),
+(852, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:15:38', '2025-05-20 01:15:38'),
+(853, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:17:08', '2025-05-20 01:17:08'),
+(854, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":null,\"whatsapp_link\":\"1234567890\",\"instagram_link\":null,\"youtube_link\":null,\"map_link\":\"https:\\/\\/www.google.com\\/maps?ll=26.928411,75.813642&z=13&t=m&hl=en&gl=IN&mapclient=embed&saddr=Kagdiwara,+Brahampuri,+Jaipur,+Rajasthan+302002&daddr=Jaipur,+Rajasthan&dirflg=d\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:17:13', '2025-05-20 01:17:13'),
+(855, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:17:13', '2025-05-20 01:17:13'),
+(856, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:20:52', '2025-05-20 01:20:52'),
+(857, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":\"https:\\/\\/www.facebook.com\\/\",\"whatsapp_link\":\"1234567890\",\"instagram_link\":\"https:\\/\\/www.instagram.com\\/\",\"youtube_link\":\"https:\\/\\/www.youtube.com\\/\",\"map_link\":\"https:\\/\\/www.google.com\\/maps?ll=26.928411,75.813642&z=13&t=m&hl=en&gl=IN&mapclient=embed&saddr=Kagdiwara,+Brahampuri,+Jaipur,+Rajasthan+302002&daddr=Jaipur,+Rajasthan&dirflg=d\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:22:26', '2025-05-20 01:22:26'),
+(858, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:22:26', '2025-05-20 01:22:26'),
+(859, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:29:04', '2025-05-20 01:29:04'),
+(860, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":\"https:\\/\\/www.facebook.com\\/\",\"whatsapp_link\":\"1234567890\",\"instagram_link\":\"https:\\/\\/www.instagram.com\\/\",\"youtube_link\":\"https:\\/\\/www.youtube.com\\/\",\"map_link\":\"https:\\/\\/www.google.com\\/maps?ll=26.928411,75.813642&z=13&t=m&hl=en&gl=IN&mapclient=embed&saddr=Kagdiwara,+Brahampuri,+Jaipur,+Rajasthan+302002&daddr=Jaipur,+Rajasthan&dirflg=d\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:29:08', '2025-05-20 01:29:08'),
+(861, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:29:08', '2025-05-20 01:29:08'),
+(862, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:30:37', '2025-05-20 01:30:37'),
+(863, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":\"https:\\/\\/www.facebook.com\\/\",\"whatsapp_link\":\"1234567890\",\"instagram_link\":\"https:\\/\\/www.instagram.com\\/\",\"youtube_link\":\"https:\\/\\/www.youtube.com\\/\",\"map_link\":null,\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:30:52', '2025-05-20 01:30:52'),
+(864, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:30:53', '2025-05-20 01:30:53'),
+(865, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:30:55', '2025-05-20 01:30:55'),
+(866, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:31:12', '2025-05-20 01:31:12'),
+(867, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":\"https:\\/\\/www.facebook.com\\/\",\"whatsapp_link\":\"1234567890\",\"instagram_link\":\"https:\\/\\/www.instagram.com\\/\",\"youtube_link\":\"https:\\/\\/www.youtube.com\\/\",\"map_link\":\"104!3d26.928405169007863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d26.9435479!2d75.83830329999999!4m5!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sjaipur!3m2!1d26.9124336!2d75.7872709!5e0!3m2!1sen!2sin!4v1744625622547!5m2!1sen!2sin\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:31:15', '2025-05-20 01:31:15'),
+(868, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:31:15', '2025-05-20 01:31:15'),
+(869, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:32:26', '2025-05-20 01:32:26'),
+(870, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":\"https:\\/\\/www.facebook.com\\/\",\"whatsapp_link\":\"1234567890\",\"instagram_link\":\"https:\\/\\/www.instagram.com\\/\",\"youtube_link\":\"https:\\/\\/www.youtube.com\\/\",\"map_link\":\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m26!1m12!1m3!1d56915.43624521951!2d75.77244206835104!3d26.928405169007863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d26.9435479!2d75.83830329999999!4m5!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sjaipur!3m2!1d26.9124336!2d75.7872709!5e0!3m2!1sen!2sin!4v1744625622547!5m2!1sen!2sin\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:32:30', '2025-05-20 01:32:30'),
+(871, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:32:31', '2025-05-20 01:32:31'),
+(872, 1, 'admin/company-infos/1/edit', 'GET', '127.0.0.1', '[]', '2025-05-20 01:33:19', '2025-05-20 01:33:19'),
+(873, 1, 'admin/company-infos/1', 'PUT', '127.0.0.1', '{\"address\":\"20, Flat No.5 Ramgarh Mode, Jaipur - 302020\",\"phone_number\":\"9876543210\",\"email\":\"example@gmail.com\",\"facbook_link\":\"https:\\/\\/www.facebook.com\\/\",\"whatsapp_link\":\"1234567890\",\"instagram_link\":\"https:\\/\\/www.instagram.com\\/\",\"youtube_link\":\"https:\\/\\/www.youtube.com\\/\",\"map_link\":\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m26!1m12!1m3!1d56915.43624521951!2d75.77244206835104!3d26.928405169007863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d26.9435479!2d75.83830329999999!4m5!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sjaipur!3m2!1d26.9124336!2d75.7872709!5e0!3m2!1sen!2sin!4v1744625622547!5m2!1sen!2sin\",\"_token\":\"Q6hEQvr816XQ4c5cpo69NGfyeF80hiENTXjMkVdK\",\"_method\":\"PUT\"}', '2025-05-20 01:33:24', '2025-05-20 01:33:24'),
+(874, 1, 'admin/company-infos', 'GET', '127.0.0.1', '[]', '2025-05-20 01:33:24', '2025-05-20 01:33:24');
 
 -- --------------------------------------------------------
 
@@ -861,7 +1062,9 @@ CREATE TABLE `admin_role_menu` (
 
 INSERT INTO `admin_role_menu` (`role_id`, `menu_id`, `created_at`, `updated_at`) VALUES
 (1, 2, NULL, NULL),
-(1, 14, NULL, NULL);
+(1, 14, NULL, NULL),
+(1, 24, NULL, NULL),
+(1, 26, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -939,6 +1142,33 @@ CREATE TABLE `admin_user_permissions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE `company` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facbook_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `whatsapp_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `map_link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id`, `address`, `phone_number`, `email`, `facbook_link`, `whatsapp_link`, `instagram_link`, `youtube_link`, `map_link`, `created_at`, `updated_at`) VALUES
+(1, '20, Flat No.5 Ramgarh Mode, Jaipur - 302020', '9876543210', 'example@gmail.com', 'https://www.facebook.com/', '1234567890', 'https://www.instagram.com/', 'https://www.youtube.com/', 'https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d56915.43624521951!2d75.77244206835104!3d26.928405169007863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d26.9435479!2d75.83830329999999!4m5!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sjaipur!3m2!1d26.9124336!2d75.7872709!5e0!3m2!1sen!2sin!4v1744625622547!5m2!1sen!2sin', '2025-05-20 01:14:34', '2025-05-20 01:33:24');
 
 -- --------------------------------------------------------
 
@@ -1039,7 +1269,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2025_05_17_084911_create_testimonials_table', 6),
 (11, '2025_05_17_102946_create_homebanner_table', 7),
 (12, '2025_05_19_054123_create_privacy_table', 8),
-(13, '2025_05_19_054220_create_terms_table', 9);
+(13, '2025_05_19_054220_create_terms_table', 9),
+(14, '2025_05_20_054647_create_refund_table', 10),
+(15, '2025_05_20_060354_create_about_table', 11),
+(16, '2025_05_20_062350_create_poster_table', 12),
+(17, '2025_05_20_064224_create_company_table', 13);
 
 -- --------------------------------------------------------
 
@@ -1071,6 +1305,29 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `poster`
+--
+
+CREATE TABLE `poster` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `poster`
+--
+
+INSERT INTO `poster` (`id`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'images/images (1).jpeg', '2025-05-20 00:58:57', '2025-05-20 00:58:57'),
+(2, 'images/banner-1.jpg', '2025-05-20 00:59:04', '2025-05-20 00:59:04'),
+(3, 'images/set-spices-herbs-cooking-small-260nw-1743305456.webp', '2025-05-20 00:59:11', '2025-05-20 00:59:11'),
+(4, 'images/538992c8b99e8_thumb900.jpg', '2025-05-20 00:59:18', '2025-05-20 00:59:18');
 
 -- --------------------------------------------------------
 
@@ -1120,17 +1377,18 @@ CREATE TABLE `product` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `seo_title` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_key` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `seo_key` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `product_name`, `slug`, `product_id`, `image`, `pictures`, `descount_price`, `price`, `contant`, `description`, `facebook`, `whatsapp`, `instagram`, `linkedin`, `itinerary`, `status`, `created_at`, `updated_at`, `seo_title`, `seo_des`, `seo_key`) VALUES
-(1, 'Reagan Farmer', 'reagan-farmer', '1', 'images/about-us-image.png', '[\"product_banner\\/qualityicon-1.jpg\",\"product_banner\\/qualityicon-2.jpg\",\"product_banner\\/qualityicon-3.jpg\",\"product_banner\\/qualityicon-4.jpg\"]', '780', '600', '<p>Voluptatibus optio</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'At veniam elit off', 1, '2025-05-14 01:46:03', '2025-05-17 01:24:55', 'Reprehenderit proid', 'Quas ullam illo id e', 'Non quod officiis mi'),
-(2, 'Bethany Roach', 'bethany-roach', '2', 'images/logo_1.png', '[\"product_banner\\/qualityicon-2_2.jpg\",\"product_banner\\/qualityicon-3_2.jpg\",\"product_banner\\/qualityicon-4_2.jpg\"]', '50', '15', '<p>sdaasdsadsa</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>3582.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>42.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>772.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;12g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>31.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, 'asdsad', 1, '2025-05-14 03:58:23', '2025-05-17 03:50:19', 'Animi sunt corpori', 'Cum qui minima id e', 'Velit repudiandae au'),
-(3, 'Laith Dickerson', 'laith-dickerson', '1', 'images/Fullmetal Alchemist.jpg', '[\"product_banner\\/21615.jpg\",\"product_banner\\/21633.jpg\",\"product_banner\\/21635.jpg\"]', '882', '664', '<p>wdwdwdqedwq</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, NULL, 1, '2025-05-14 05:12:05', '2025-05-17 01:25:09', 'Minim voluptatibus a', 'Aperiam vitae veniam', 'Beatae tempora maxim');
+INSERT INTO `product` (`id`, `product_name`, `slug`, `product_id`, `image`, `pictures`, `descount_price`, `price`, `contant`, `description`, `facebook`, `whatsapp`, `instagram`, `linkedin`, `itinerary`, `status`, `created_at`, `updated_at`, `seo_title`, `seo_des`, `seo_key`, `seo_image`) VALUES
+(1, 'Reagan Farmer', 'reagan-farmer', '1', 'images/about-us-image.png', '[\"product_banner\\/qualityicon-1.jpg\",\"product_banner\\/qualityicon-2.jpg\",\"product_banner\\/qualityicon-3.jpg\",\"product_banner\\/qualityicon-4.jpg\"]', '780', '600', '<p>Voluptatibus optio</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'http://127.0.0.1:8000/product-details', 'At veniam elit off', 1, '2025-05-14 01:46:03', '2025-05-20 00:07:20', 'Reprehenderit proid', 'Quas ullam illo id e', 'Non quod officiis mi', 'images/about-us-image_1.png'),
+(2, 'Bethany Roach', 'bethany-roach', '2', 'images/logo_1.png', '[\"product_banner\\/qualityicon-2_2.jpg\",\"product_banner\\/qualityicon-3_2.jpg\",\"product_banner\\/qualityicon-4_2.jpg\"]', '50', '15', '<p>sdaasdsadsa</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>3582.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>42.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>772.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;12g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>31.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, 'asdsad', 1, '2025-05-14 03:58:23', '2025-05-20 00:07:29', 'Animi sunt corpori', 'Cum qui minima id e', 'Velit repudiandae au', 'images/logo_2.png'),
+(3, 'Laith Dickerson', 'laith-dickerson', '1', 'images/Fullmetal Alchemist.jpg', '[\"product_banner\\/21615.jpg\",\"product_banner\\/21633.jpg\",\"product_banner\\/21635.jpg\"]', '882', '664', '<p>wdwdwdqedwq</p>', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<th>Energy</th>\r\n			<td>358.4kcal</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Protein</th>\r\n			<td>4.16g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Carbohydrate</th>\r\n			<td>77.34g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Sugar</th>\r\n			<td>&lt;1g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Fat</th>\r\n			<td>3.6g</td>\r\n		</tr>\r\n		<tr>\r\n			<th>Ingredients</th>\r\n			<td>Turmeric Whole</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, NULL, NULL, NULL, NULL, 1, '2025-05-14 05:12:05', '2025-05-20 00:07:39', 'Minim voluptatibus a', 'Aperiam vitae veniam', 'Beatae tempora maxim', 'images/qualityicon-1.jpg');
 
 -- --------------------------------------------------------
 
@@ -1146,6 +1404,7 @@ CREATE TABLE `product_category` (
   `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_key` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1154,9 +1413,30 @@ CREATE TABLE `product_category` (
 -- Dumping data for table `product_category`
 --
 
-INSERT INTO `product_category` (`id`, `name`, `slug`, `description`, `seo_title`, `seo_des`, `seo_key`, `created_at`, `updated_at`) VALUES
-(1, 'Cat-1', 'cat-1', NULL, 'Pariatur Quis maior', 'Non aut expedita eni', 'Et architecto aut re', '2025-05-14 01:05:07', '2025-05-14 01:05:30'),
-(2, 'Cat-2', 'cat-2', NULL, 'Consequatur Aut lor', 'Voluptas nisi duis s', 'Corrupti non dolor', '2025-05-14 01:05:18', '2025-05-14 01:05:40');
+INSERT INTO `product_category` (`id`, `name`, `slug`, `description`, `seo_title`, `seo_des`, `seo_key`, `seo_image`, `created_at`, `updated_at`) VALUES
+(1, 'Cat-1', 'cat-1', NULL, 'Pariatur Quis maior', 'Non aut expedita eni', 'Et architecto aut re', 'images/Private-Policy_2.jpg', '2025-05-14 01:05:07', '2025-05-20 00:06:50'),
+(2, 'Cat-2', 'cat-2', NULL, 'Consequatur Aut lor', 'Voluptas nisi duis s', 'Corrupti non dolor', 'images/terms-of-use-top-banner_3.jpg', '2025-05-14 01:05:18', '2025-05-20 00:06:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `refund`
+--
+
+CREATE TABLE `refund` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `refund`
+--
+
+INSERT INTO `refund` (`id`, `image`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'images/Refund20banner.webp', '<h1>Refund Policy</h1>\r\n\r\n<p>Welcome to our Terms of Service page. Please read the following terms carefully before using our services.</p>\r\n\r\n<h2>1. Acceptance of Terms</h2>\r\n\r\n<p>By accessing or using our services, you agree to be bound by these terms and conditions.</p>\r\n\r\n<h2>2. Changes to Terms</h2>\r\n\r\n<p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on this page.</p>\r\n\r\n<h2>3. User Responsibilities</h2>\r\n\r\n<p>You are responsible for your use of our services and for any content you post.</p>\r\n\r\n<h2>4. Limitation of Liability</h2>\r\n\r\n<p>We are not liable for any damages arising from your use of our services.</p>\r\n\r\n<h3>5. Governing Law</h3>\r\n\r\n<p>These terms are governed by the laws of [Your Country].</p>\r\n\r\n<ul>\r\n	<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa exercitationem cum reiciendis adipisci eius iste quae deserunt iure dignissimos voluptatibus!</li>\r\n</ul>\r\n\r\n<p>Lorem ipsum dolor sit amet.</p>\r\n\r\n<ol>\r\n	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem necessitatibus rem natus recusandae cum odit?</li>\r\n</ol>', '2025-05-20 00:19:45', '2025-05-20 00:19:45');
 
 -- --------------------------------------------------------
 
@@ -1217,28 +1497,37 @@ CREATE TABLE `title` (
   `seo_title_home` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des_home` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_key_home` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image_home` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_title_product` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des_product` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_key_product` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image_product` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_title_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des_contact` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_key_contact` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image_contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_title_terms` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des_terms` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_key_terms` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image_terms` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `seo_title_privacy` varchar(251) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `seo_des_privacy` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_key_privacy` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `seo_key_privacy` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image_privacy` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title_refund` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_des_refund` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_key_refund` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_image_refund` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `title`
 --
 
-INSERT INTO `title` (`id`, `seo_title_home`, `seo_des_home`, `seo_key_home`, `seo_title_product`, `seo_des_product`, `seo_key_product`, `seo_title_contact`, `seo_des_contact`, `seo_key_contact`, `seo_title_terms`, `seo_des_terms`, `seo_key_terms`, `created_at`, `updated_at`, `seo_title_privacy`, `seo_des_privacy`, `seo_key_privacy`) VALUES
-(1, 'home title', 'home des', 'home key', 'product title', 'product des', 'product key', 'contact title', 'contact des', 'contact key', 'terms title', 'terms des', 'terms key', '2025-05-17 00:31:42', '2025-05-17 01:56:47', 'privacy title', 'privacy des', 'privacy key');
+INSERT INTO `title` (`id`, `seo_title_home`, `seo_des_home`, `seo_key_home`, `seo_image_home`, `seo_title_product`, `seo_des_product`, `seo_key_product`, `seo_image_product`, `seo_title_contact`, `seo_des_contact`, `seo_key_contact`, `seo_image_contact`, `seo_title_terms`, `seo_des_terms`, `seo_key_terms`, `seo_image_terms`, `created_at`, `updated_at`, `seo_title_privacy`, `seo_des_privacy`, `seo_key_privacy`, `seo_image_privacy`, `seo_title_refund`, `seo_des_refund`, `seo_key_refund`, `seo_image_refund`) VALUES
+(1, 'home title', 'home des', 'home key', 'images/diveristy-condiments-frame-with-copy-space_1.jpg', 'product title', 'product des', 'product key', 'images/about-us-image_2.png', 'contact title', 'contact des', 'contact key', 'images/M3791-The-Benefits-of-Preschool-Featured-Image-qmwkvv7svsw6proauxbob0a3nvs1v1q0y3w6gbqb2g.jpg', 'terms title', 'terms des', 'terms key', 'images/terms-of-use-top-banner_2.jpg', '2025-05-17 00:31:42', '2025-05-20 00:23:53', 'privacy title', 'privacy des', 'privacy key', 'images/Private-Policy_1.jpg', 'refund title', 'refund description', 'refund key', 'images/Refund20banner_1.webp');
 
 -- --------------------------------------------------------
 
@@ -1260,6 +1549,12 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `about`
+--
+ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `admin_menu`
@@ -1322,6 +1617,12 @@ ALTER TABLE `admin_user_permissions`
   ADD KEY `admin_user_permissions_user_id_permission_id_index` (`user_id`,`permission_id`);
 
 --
+-- Indexes for table `company`
+--
+ALTER TABLE `company`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -1361,6 +1662,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `poster`
+--
+ALTER TABLE `poster`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `privacy`
 --
 ALTER TABLE `privacy`
@@ -1376,6 +1683,12 @@ ALTER TABLE `product`
 -- Indexes for table `product_category`
 --
 ALTER TABLE `product_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `refund`
+--
+ALTER TABLE `refund`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1408,16 +1721,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `about`
+--
+ALTER TABLE `about`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `admin_menu`
 --
 ALTER TABLE `admin_menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `admin_operation_log`
 --
 ALTER TABLE `admin_operation_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=703;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=875;
 
 --
 -- AUTO_INCREMENT for table `admin_permissions`
@@ -1435,6 +1754,12 @@ ALTER TABLE `admin_roles`
 -- AUTO_INCREMENT for table `admin_users`
 --
 ALTER TABLE `admin_users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `company`
+--
+ALTER TABLE `company`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -1459,13 +1784,19 @@ ALTER TABLE `homebanner`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `poster`
+--
+ALTER TABLE `poster`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `privacy`
@@ -1484,6 +1815,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `refund`
+--
+ALTER TABLE `refund`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `terms`
